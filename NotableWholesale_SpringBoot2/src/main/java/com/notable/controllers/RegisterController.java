@@ -13,28 +13,22 @@ public class RegisterController {
 	JdbcTemplate jdbc;
 	
 	@PostMapping("register")
-	public String login (String action, String firstName, String lastName, String street, String city, 
+	public String registerLoginUser (String action, String firstName, String lastName, String street, String city, 
 			String state, String zip, String email, String password) {
 		
 		String sqlQuery;
-		
-		if (action.equals("add")) {
 			
-			sqlQuery = "insert into users(firstname, lastname, street, city, state, zip, email, password) values ('" + 
-					firstName + "', '" + lastName + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "', '" + email + "', '" + password + "')";
-			jdbc.execute(sqlQuery);
-			
-			return "views/login";
-		}
+		sqlQuery = "insert into users(firstname, lastname, street, city, state, zip, email, password) values ('" + 
+				firstName + "', '" + lastName + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "', '" + email + "', '" + password + "')";
 		
-//		boolean isValidUser = UserDB.authenticateUser(email, password);
-//		
-//		if (isValidUser) {
-//			return "views/home";
-//		}
-//		
-		return "views/loginInvalid";
+		jdbc.execute(sqlQuery);
+		
+		return "views/login";
+			
 	}
+	
+	
+	
 	
 //	@PostMapping("register")
 //	public String login (@RequestParam("email") String email, @RequestParam("password")String password) {
