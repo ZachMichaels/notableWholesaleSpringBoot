@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.notable.business.User;
@@ -29,7 +30,6 @@ public class LoginController {
 				new UserMapper());
 
 		String emailResult = users.get(0).getEmail();
-		;
 		String passwordResult = users.get(0).getPassword();
 		String firstNameResult = users.get(0).getFirstName();
 
@@ -37,8 +37,7 @@ public class LoginController {
 		System.out.println(passwordResult);
 		System.out.println(firstNameResult);
 
-		// verifying username and password, and if authenticated will create first name
-		// cookie and login Cookie
+		// verifying username and password, and if authenticated will create firstname cookie and login Cookie
 		if (emailResult.equals(email) && passwordResult.equals(password)) {
 			System.out.println("User is authenticated");
 
@@ -77,4 +76,27 @@ public class LoginController {
 
 		return "index";
 	}
+
+	@GetMapping("logout")
+	public String logOutUser(HttpServletResponse response, HttpServletRequest request) {
+
+		Cookie[] cookies = request.getCookies();
+		for (Cookie cookie : cookies) {
+			if (cookie.getName().equalsIgnoreCase("loggedInCookie")) {
+				cookie.setValue("no");
+				cookie.setPath("/");
+				response.addCookie(cookie);
+			}
+			if (cookie.getName().equalsIgnoreCase("firstNameCookie")) {
+				cookie.setMaxAge(0);
+				cookie.setPath("/");
+				response.addCookie(cookie);
+			}
+
+		}
+		
+		return "index";
+
+	}
+
 }
