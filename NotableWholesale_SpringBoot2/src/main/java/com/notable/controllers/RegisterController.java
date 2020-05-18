@@ -1,41 +1,55 @@
 package com.notable.controllers;
 
-import java.io.IOException;
-import java.sql.ResultSet;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.notable.business.User;
-import com.notable.data.UserDB;
 
 @Controller
 public class RegisterController {
 	
+	@Autowired
+	JdbcTemplate jdbc;
+	
 	@PostMapping("register")
-	public String login (@RequestParam("email") String email, @RequestParam("password")String password) {
+	public String login (String action, String firstName, String lastName, String street, String city, 
+			String state, String zip, String email, String password) {
 		
-		System.out.println(email);
-		System.out.println(password);
+		String sqlQuery;
 		
-		boolean isValidUser = UserDB.authenticateUser(email, password);
-		
-		if (isValidUser) {
-			return "views/home";
+		if (action.equals("add")) {
+			
+			sqlQuery = "insert into users(firstname, lastname, street, city, state, zip, email, password) values ('" + 
+					firstName + "', '" + lastName + "', '" + street + "', '" + city + "', '" + state + "', '" + zip + "', '" + email + "', '" + password + "')";
+			jdbc.execute(sqlQuery);
+			
+			return "views/login";
 		}
 		
+//		boolean isValidUser = UserDB.authenticateUser(email, password);
+//		
+//		if (isValidUser) {
+//			return "views/home";
+//		}
+//		
 		return "views/loginInvalid";
 	}
+	
+//	@PostMapping("register")
+//	public String login (@RequestParam("email") String email, @RequestParam("password")String password) {
+//		
+//		System.out.println(email);
+//		System.out.println(password);
+//		
+//		boolean isValidUser = UserDB.authenticateUser(email, password);
+//		
+//		if (isValidUser) {
+//			return "views/home";
+//		}
+//		
+//		return "views/loginInvalid";
+//	}
 }
 	
 

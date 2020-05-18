@@ -26,18 +26,14 @@
               <input class="regInput" type="text" name="firstName" value=""><br>
               <label class="">Last Name:</label>
               <input class="regInput" type="text" name="lastName" value=""><br>
-              <label class="">Address 1:</label>
-              <input class="regInput" type="text" name="address1" value=""><br>
-              <label class="">Address 2:</label>
-              <input class="regInput" type="text" name="address2" value=""><br>
+              <label class="">Street:</label>
+              <input class="regInput" type="text" name="street" value=""><br>
               <label class="">City:</label>
               <input class="regInput" type="text" name="city" value=""><br>
               <label class="">State:</label>
               <input class="regInput" type="text" name="state" value=""><br>
               <label class="">Zip:</label>
               <input class="regInput" type="text" name="zip" value=""><br>
-              <label class="">Country:</label>
-              <input class="regInput" type="text" name="country" value=""><br>
               <label class="">Email:</label>
               <input class="regInput" type="email" name="email" value=""><br>
               <label class="">Password:</label>
