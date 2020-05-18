@@ -57,7 +57,7 @@
                         id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"> Groceries </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="home?name=groceries">All Groceries</a> <a
+                        <a class="dropdown-item" href="category?name=groceries">All Groceries</a> <a
                             class="dropdown-item" href="home?name=meatSticks">Meat Sticks</a> <a
                             class="dropdown-item" href="home?name=crackers">Crackers</a> <a
                             class="dropdown-item" href="home?name=tofu">Free-range Tofu</a>
