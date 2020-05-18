@@ -43,17 +43,17 @@ pageEncoding="ISO-8859-1"%>
   <div id="SGProductsStart" class="container home">
     <div class="row featureProducts">
       <div class="prod-1 col-sm-4">
-        <a href="product?productId=9"><img src="images/television.jpg" alt=""></a>
+        <a href="product?name=TV"><img src="images/television.jpg" alt=""></a>
         <p class="prodName">TV</p>
         <p class="prodPrice">299.99</p>
       </div>
       <div class="prod-2 col-sm-4">
-        <a href="product?productId=7"><img src="images/red-calc.jfif" alt=""></a>
+        <a href="product?name=computer"><img src="images/red-calc.jfif" alt=""></a>
         <p class="prodName">Computer</p>
         <p class="prodPrice">12.99</p>
       </div>
       <div class="prod-3 col-sm-4">
-        <a href="product?productId=8"><img src="images/displayport-cable.jfif" alt=""></a>
+        <a href="product?name=HDMI"><img src="images/displayport-cable.jfif" alt=""></a>
         <p class="prodName">Display Cable</p>
         <p class="prodPrice">18.99</p>
       </div>

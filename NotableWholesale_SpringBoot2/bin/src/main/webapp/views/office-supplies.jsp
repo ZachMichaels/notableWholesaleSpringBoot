@@ -7,7 +7,7 @@ pageEncoding="ISO-8859-1"%>
 
 <head>
 <c:import url="/sharedViews/headMeta.jsp" />
-<title>Electronics</title>
+<title>Office Supplies</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@ pageEncoding="ISO-8859-1"%>
   <div class="container home">
     <div class="row">
       <div class="col-md-12">
-        <h1>Electronics</h1>
+        <h1>Office Supplies</h1>
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sort Products
@@ -43,19 +43,19 @@ pageEncoding="ISO-8859-1"%>
   <div id="SGProductsStart" class="container home">
     <div class="row featureProducts">
       <div class="prod-1 col-sm-4">
-        <a href="product?productId=9"><img src="images/television.jpg" alt=""></a>
-        <p class="prodName">TV</p>
-        <p class="prodPrice">299.99</p>
+        <a href="product?name=stapler"><img src="images/stapler.jpg" alt=""></a>
+        <p class="prodName">Stapler</p>
+        <p class="prodPrice">9.99</p>
       </div>
       <div class="prod-2 col-sm-4">
-        <a href="product?productId=7"><img src="images/red-calc.jfif" alt=""></a>
-        <p class="prodName">Computer</p>
-        <p class="prodPrice">12.99</p>
+        <a href="product?name=shredder"><img src="images/Shredder.jfif" alt=""></a>
+        <p class="prodName">Paper Shredder</p>
+        <p class="prodPrice">59.99</p>
       </div>
       <div class="prod-3 col-sm-4">
-        <a href="product?productId=8"><img src="images/displayport-cable.jfif" alt=""></a>
-        <p class="prodName">Display Cable</p>
-        <p class="prodPrice">18.99</p>
+        <a href="name=3dprinter"><img src="images/3DPrint-BW.jfif" alt=""></a>
+        <p class="prodName">3D Printer</p>
+        <p class="prodPrice">2399.99</p>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@ pageEncoding="ISO-8859-1"%>
     </div>
   </div>
 
-   <c:import url="/sharedViews/footer.jsp" />
+	<c:import url="/sharedViews/footer.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
 	
 </body>
