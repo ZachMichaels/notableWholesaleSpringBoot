@@ -72,6 +72,9 @@
 	</div>
 	</div>
 </div>
+
+<input type="submit" class="headerButton btn" name= "checkout" value="Remove">
+
 </c:if>
  <c:if test="${cookie.loggedInCookie.value != 'yes'}">
  	<p>Please log in to view your cart</p>
