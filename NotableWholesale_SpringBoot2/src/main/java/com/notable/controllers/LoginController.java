@@ -23,7 +23,7 @@ public class LoginController {
 
 	@PostMapping("login")
 	public String loginUser(String email, String password, HttpServletResponse response, HttpServletRequest request) {
-
+		
 		// should only be one user in the list
 		// Make email unique in the users table to ensure this
 		List<User> users = jdbc.query("SELECT firstname, email, password FROM users WHERE email = '" + email + "'",
