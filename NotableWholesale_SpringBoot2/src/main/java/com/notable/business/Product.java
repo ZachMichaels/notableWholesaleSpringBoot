@@ -5,18 +5,41 @@ import java.io.Serializable;
 
 public class Product implements Serializable {
 
-	//private int productId;
+	private int productId;
 	private String name;
+	private String description;
 	private double price;
+	private String img;
+	private String category;
+	private int stock;
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	public Product() {
 	}
 
-	/*
-	 * public int getProductId() { return productId; }
-	 * 
-	 * public void setProductId(int productId) { this.productId = productId; }
-	 */
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -41,6 +64,22 @@ public class Product implements Serializable {
 	@Override
 	public String toString() {
 		return name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 
 }
