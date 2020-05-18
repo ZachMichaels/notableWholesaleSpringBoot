@@ -7,7 +7,7 @@ pageEncoding="ISO-8859-1"%>
 
 <head>
 <c:import url="/sharedViews/headMeta.jsp" />
-<title>Electronics</title>
+<title>Groceries</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@ pageEncoding="ISO-8859-1"%>
   <div class="container home">
     <div class="row">
       <div class="col-md-12">
-        <h1>Electronics</h1>
+        <h1>Groceries</h1>
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sort Products
@@ -43,19 +43,19 @@ pageEncoding="ISO-8859-1"%>
   <div id="SGProductsStart" class="container home">
     <div class="row featureProducts">
       <div class="prod-1 col-sm-4">
-        <a href="product?productId=9"><img src="images/television.jpg" alt=""></a>
-        <p class="prodName">TV</p>
-        <p class="prodPrice">299.99</p>
+        <a href="product?name=meatSticks"><img src="images/meatSticks.jpg" alt=""></a>
+        <p class="prodName">Meat Sticks</p>
+        <p class="prodPrice">5.99</p>
       </div>
       <div class="prod-2 col-sm-4">
-        <a href="product?productId=7"><img src="images/red-calc.jfif" alt=""></a>
-        <p class="prodName">Computer</p>
-        <p class="prodPrice">12.99</p>
+        <a href="product?name=crackers"><img src="images/crackers.jpg" alt=""></a>
+        <p class="prodName">Crackers</p>
+        <p class="prodPrice">3.89</p>
       </div>
       <div class="prod-3 col-sm-4">
-        <a href="product?productId=8"><img src="images/displayport-cable.jfif" alt=""></a>
-        <p class="prodName">Display Cable</p>
-        <p class="prodPrice">18.99</p>
+        <a href="product?name=tofu"><img src="images/tofu.jpg" alt="akdfha;kjdffk"></a>
+        <p class="prodName">Free-range Tofu</p>
+        <p class="prodPrice">6.99</p>
       </div>
     </div>
   </div>
@@ -80,9 +80,10 @@ pageEncoding="ISO-8859-1"%>
     </div>
   </div>
 
-   <c:import url="/sharedViews/footer.jsp" />
+<c:import url="/sharedViews/footer.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
 	
 </body>
 
 </html>
+

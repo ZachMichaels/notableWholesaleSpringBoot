@@ -35,7 +35,7 @@
 	                            aria-labelledby="navbarDropdownMenuLink">
 	                            <a class="dropdown-item" href="home?name=account"><i class="fa fa-user"></i> User Profile</a> <a class="dropdown-item" href="home?name=orders"><i class="fa fa-list-ul"></i> Order History</a> 
 	                            <a class="dropdown-item" href="home?name=wishlist.jsp"><i class="fa fa-gift"></i> Wishlist</a> 
-	                            <a class="dropdown-item" href="logout"><i class="fa fa-power-off"></i> Log Out</a>
+	                            <a class="dropdown-item" href="register?action=logout"><i class="fa fa-power-off"></i> Log Out</a>
 	                        </div>
            				</c:when>
            			</c:choose>
@@ -58,9 +58,9 @@
                         aria-haspopup="true" aria-expanded="false"> Groceries </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="home?name=groceries">All Groceries</a> <a
-                            class="dropdown-item" href="product?productId=1">Meat Sticks</a> <a
-                            class="dropdown-item" href="product?productId=2">Crackers</a> <a
-                            class="dropdown-item" href="product?productId=3">Free-range Tofu</a>
+                            class="dropdown-item" href="home?name=meatSticks">Meat Sticks</a> <a
+                            class="dropdown-item" href="home?name=crackers">Crackers</a> <a
+                            class="dropdown-item" href="home?name=tofu">Free-range Tofu</a>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -70,9 +70,9 @@
                     <div class="dropdown-menu"
                         aria-labelledby="navbarDropdownMenuLink2">
                         <a class="dropdown-item" href="home?name=clothing">All Clothing</a> <a
-                            class="dropdown-item" href="product?productId=4">Romphims</a> <a
-                            class="dropdown-item" href="product?productId=5">Onesies</a> <a
-                            class="dropdown-item" href="product?productId=6">Snuggies</a>
+                            class="dropdown-item" href="home?name=romphim">Romphims</a> <a
+                            class="dropdown-item" href="home?name=onesie">Onesies</a> <a
+                            class="dropdown-item" href="home?name=snuggy">Snuggies</a>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,9 +81,9 @@
                         aria-haspopup="true" aria-expanded="false"> Electronics </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="home?name=electronics">All
-                            Electronics</a> <a class="dropdown-item" href="product?productId=7">Computers</a>
-                        <a class="dropdown-item" href="product?productId=8">HDMI Cables</a> <a
-                            class="dropdown-item" href="product?productId=9">Televisions</a>
+                            Electronics</a> <a class="dropdown-item" href="home?name=computer">Computers</a>
+                        <a class="dropdown-item" href="home?name=HDMI">HDMI Cables</a> <a
+                            class="dropdown-item" href="home?name=TV">Televisions</a>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -92,9 +92,9 @@
                         aria-haspopup="true" aria-expanded="false"> Sporting Goods </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="home?name=sporting-goods">All
-                            Sporting Goods</a> <a class="dropdown-item" href="product?productId=10">Nunchucks</a>
-                        <a class="dropdown-item" href="product?productId=11">Javelins</a> <a
-                            class="dropdown-item" href="product?productId=12">Rocket Skates</a>
+                            Sporting Goods</a> <a class="dropdown-item" href="home?name=nunchucks">Nunchucks</a>
+                        <a class="dropdown-item" href="home?name=javelin">Javelins</a> <a
+                            class="dropdown-item" href="home?name=skates">Rocket Skates</a>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -103,9 +103,9 @@
                         aria-haspopup="true" aria-expanded="false"> Office Supplies </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="home?name=office-supplies">All
-                            Office Supplies</a> <a class="dropdown-item" href="product?productId=13">Staplers</a>
-                        <a class="dropdown-item" href="product?productId=14">Paper Shredders</a>
-                        <a class="dropdown-item" href="product?productId=15">3D Printers</a>
+                            Office Supplies</a> <a class="dropdown-item" href="home?name=stapler">Staplers</a>
+                        <a class="dropdown-item" href="home?name=shredder">Paper Shredders</a>
+                        <a class="dropdown-item" href="home?name=3dprinter">3D Printers</a>
                     </div>
                 </nav>
             </div>

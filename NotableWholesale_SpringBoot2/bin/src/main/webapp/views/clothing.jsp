@@ -7,7 +7,7 @@ pageEncoding="ISO-8859-1"%>
 
 <head>
 <c:import url="/sharedViews/headMeta.jsp" />
-<title>Electronics</title>
+<title>Clothing</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@ pageEncoding="ISO-8859-1"%>
   <div class="container home">
     <div class="row">
       <div class="col-md-12">
-        <h1>Electronics</h1>
+        <h1>Clothing</h1>
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sort Products
@@ -34,7 +34,7 @@ pageEncoding="ISO-8859-1"%>
           <input type="text" name="" class="highPrice" placeholder="Enter Maximum $" value="" />
           <button id="filterButton" class="headerButton btn">Go</button>
         </div>
-
+        
       </div>
     </div>
   </div>
@@ -43,19 +43,19 @@ pageEncoding="ISO-8859-1"%>
   <div id="SGProductsStart" class="container home">
     <div class="row featureProducts">
       <div class="prod-1 col-sm-4">
-        <a href="product?productId=9"><img src="images/television.jpg" alt=""></a>
-        <p class="prodName">TV</p>
-        <p class="prodPrice">299.99</p>
+        <a href="product?name=romphim"><img src="images/romphim.jpg" alt=""></a>
+        <p class="prodName">Stylish Romphim</p>
+        <p class="prodPrice">59.99</p>
       </div>
       <div class="prod-2 col-sm-4">
-        <a href="product?productId=7"><img src="images/red-calc.jfif" alt=""></a>
-        <p class="prodName">Computer</p>
-        <p class="prodPrice">12.99</p>
+        <a href="product?name=onesie"><img src="images/onesie.jpg" alt=""></a>
+        <p class="prodName">Onesie</p>
+        <p class="prodPrice">49.99</p>
       </div>
       <div class="prod-3 col-sm-4">
-        <a href="product?productId=8"><img src="images/displayport-cable.jfif" alt=""></a>
-        <p class="prodName">Display Cable</p>
-        <p class="prodPrice">18.99</p>
+        <a href="product?name=snuggy"><img src="images/snuggy.jpg" alt=""></a>
+        <p class="prodName">Snuggy</p>
+        <p class="prodPrice">29.99</p>
       </div>
     </div>
   </div>
