@@ -40,7 +40,7 @@
           <c:forEach var="item" items="${cart.items}">
             <tr class="cart_row">
               <td>
-                <form action="<c:url value='cart'/>" method="post">
+                <form action="<c:url value='updateItem'/>" method="post">
 
 				  <input type="hidden" name="name" value="<c:out value='${item.product.name}'/>">
                   <input type="number" name='${item.product.name}' class="cartQuantity" min="1" max="100" value="<c:out value='${item.quantity}'/>" id="quantity">                         
@@ -52,7 +52,7 @@
 							<td class="cartTD">${item.totalCurrencyFormat}</td>
 
               <td>
-                <form action="<c:url value='cart'/>" method="post">
+                <form action="<c:url value='removeItem'/>" method="post">
 
                   <input type="hidden" name="name" value="<c:out value='${item.product.name}'/>">
                   <input type="submit" class="headerButton btn" name= "action" value="Remove">
