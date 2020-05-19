@@ -23,25 +23,25 @@
 	<div class="container home">
 		<div class="row featureProducts">
 			<div class="col-sm-3">
-				<a href="product?name=javelin"><img src="images/javelin.jpg"
+				<a href="product?productId=11"><img src="images/javelin.jpg"
 					alt="Roman Javelin"></a>
 				<p>Authentic Roman Javelin</p>
 				<p>$575.99</p>
 			</div>
 			<div class="col-sm-3">
-				<a href="product?name=TV"><img src="images/television.jpg"
+				<a href="product?productId=9"><img src="images/television.jpg"
 					alt="Television"></a>
 				<p>Samsung 40in Television</p>
 				<p>$299.00</p>
 			</div>
 			<div class="col-sm-3">
-				<a href="product?name=stapler"><img src="images/stapler.jpg"
+				<a href="product?productId=13"><img src="images/stapler.jpg"
 					alt="Stapler"></a>
 				<p>Stapler</p>
 				<p>$9.99</p>
 			</div>
 			<div class="col-sm-3">
-				<a href="product?name=romphim"><img src="images/romphim.jpg"
+				<a href="product?productId=4"><img src="images/romphim.jpg"
 					alt="Romphim"></a>
 				<p>Stylish Romphim</p>
 				<p>$59.99</p>
