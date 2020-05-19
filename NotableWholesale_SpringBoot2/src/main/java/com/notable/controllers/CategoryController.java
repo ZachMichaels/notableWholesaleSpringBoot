@@ -33,10 +33,10 @@ public class CategoryController {
 		return "views/category";
 	}
 	
+	// sorts products by price in ascending order
 	@GetMapping("sortAsc")
 	public String sortAscending(String name, HttpServletRequest request) {
 		
-		System.out.println(name);
 		List<Product> products = jdbc.query("SELECT * FROM products where category = '" + name + "'", new CategoryMapper());
 		
 		Collections.sort(products);
@@ -47,6 +47,7 @@ public class CategoryController {
 		return "views/category";
 	}
 	
+	// sorts products by price in descending order
 	@GetMapping("sortDesc")
 	public String sortDescending(String name, HttpServletRequest request) {
 		
@@ -60,6 +61,7 @@ public class CategoryController {
 		return "views/category";
 	}
 	
+	// sorts products by name in alphabetical order
 	@GetMapping("sortAlpha")
 	public String sortAlphabetically(String name, HttpServletRequest request) {
 		
@@ -78,6 +80,7 @@ public class CategoryController {
 		return "views/category";
 	}
 	
+	// sorts products by name in reverse alphabetical order
 	@GetMapping("sortRevAlpha")
 	public String sortReverseAlphabetically(String name, HttpServletRequest request) {
 		
@@ -96,12 +99,14 @@ public class CategoryController {
 		return "views/category";
 	}
 	
+	// filters products by user-inputted min and max price values
 	@PostMapping("priceFilter")
 	public String priceFilter(String name, Double minPrice, Double maxPrice, HttpServletRequest request) {
 		
 		System.out.println(name);
 		System.out.println(minPrice);
 		
+		// these if statements validate the min and max price fields
 		if (minPrice == null) {
 			minPrice = 0.0;
 		}
@@ -120,6 +125,8 @@ public class CategoryController {
 		List<Product> products = jdbc.query("SELECT * FROM products where category = '" + name + "' AND price > " 
 		+ minPrice + " AND price < " + maxPrice, new CategoryMapper());
 			
+		// if the list returned from db is empty, create a new product with the category, so the 
+		// filtering functions
 		if (products.isEmpty()) {
 			Product prod = new Product();
 			prod.setCategory(name);
