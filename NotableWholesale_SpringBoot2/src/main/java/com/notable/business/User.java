@@ -3,6 +3,7 @@ package com.notable.business;
 import java.io.Serializable;
 
 public class User implements Serializable {
+	
 	private int userId;
 	private String firstName;
 	private String lastName;
@@ -13,30 +14,17 @@ public class User implements Serializable {
 	private String zip;
 	private String password;
 
-	public User() {
-		userId = 0;
-		firstName = "";
-		lastName = "";
-		email = "";
-		street = "";
-		city = "";
-		state = "";
-		zip = "";
-		password = "";
-	}
+	
 
-	public User(int userId, String firstName, String lastName, String email, String street, String city, String state,
-			String zip, String password) {
-		super();
-		this.userId = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.street = street;
-		this.city = city;
-		this.state = state;
-		this.zip = zip;
-		this.password = password;
+	/*
+	 * public User(int userId, String firstName, String lastName, String email,
+	 * String street, String city, String state, String zip, String password) {
+	 * super(); this.userId = userId; this.firstName = firstName; this.lastName =
+	 * lastName; this.email = email; this.street = street; this.city = city;
+	 * this.state = state; this.zip = zip; this.password = password; }
+	 */
+	
+	public User() {
 	}
 
 	public int getUserId() {

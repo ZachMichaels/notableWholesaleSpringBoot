@@ -74,7 +74,7 @@
 </div>
 </c:if>
  <c:if test="${cookie.loggedInCookie.value != 'yes'}">
- 	<p>Please log in to view your cart</p>
+ 	<p style="text-align:center;">Please sign in to view your cart</p>
  </c:if>
     <c:import url="/sharedViews/footer.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />

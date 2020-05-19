@@ -16,9 +16,9 @@
 	<div class="container home">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4">
-      <h1>Sign In</h1>
       <div class="container" id="nwContainer">
         <div class="card" id="nwCard">
+        <h1>Sign In</h1>
           <div class="container-fluid" id="nwContainer">
             <form title="" name="LogonForm" method="post" action="register" id="LogonForm" novalidate="novalidate">
             

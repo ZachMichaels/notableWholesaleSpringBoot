@@ -27,20 +27,29 @@ public class LoginController {
 		
 		// should only be one user in the list
 		// Make email unique in the users table to ensure this
-		List<User> users = jdbc.query("SELECT firstname, email, password FROM users WHERE email = '" + email + "'",
+		List<User> users = jdbc.query("SELECT * FROM users WHERE email = '" + email + "'",
 				new UserMapper());
-
+		
 		String emailResult = users.get(0).getEmail();
 		String passwordResult = users.get(0).getPassword();
 		String firstNameResult = users.get(0).getFirstName();
+		String lastNameResult = users.get(0).getLastName();
+		String streetResult = users.get(0).getStreet();
+		
 
 		System.out.println(emailResult);
 		System.out.println(passwordResult);
 		System.out.println(firstNameResult);
+		System.out.println(lastNameResult);
+		
+		
 
 		// verifying username and password, and if authenticated will create firstname cookie and login Cookie
 		if (emailResult.equals(email) && passwordResult.equals(password)) {
 			System.out.println("User is authenticated");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("users", users);
 
 			Cookie firstNameCookie = new Cookie("firstNameCookie", firstNameResult);
 			firstNameCookie.setMaxAge(60 * 60 * 24 * 365 * 2);
