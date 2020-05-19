@@ -57,7 +57,7 @@
                         id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"> Groceries </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="category?name=groceries">All Groceries</a> <a
+                        <a class="dropdown-item" href="category?name=Groceries">All Groceries</a> <a
                             class="dropdown-item" href="home?name=meatSticks">Meat Sticks</a> <a
                             class="dropdown-item" href="home?name=crackers">Crackers</a> <a
                             class="dropdown-item" href="home?name=tofu">Free-range Tofu</a>
@@ -69,7 +69,7 @@
                         aria-haspopup="true" aria-expanded="false"> Clothing </a>
                     <div class="dropdown-menu"
                         aria-labelledby="navbarDropdownMenuLink2">
-                        <a class="dropdown-item" href="home?name=clothing">All Clothing</a> <a
+                        <a class="dropdown-item" href="category?name=clothing">All Clothing</a> <a
                             class="dropdown-item" href="product?productId=4">Romphims</a> <a
                             class="dropdown-item" href="product?productId=5">Onesies</a> <a
                             class="dropdown-item" href="product?productId=6">Snuggies</a>
@@ -80,7 +80,7 @@
                         id="navbarDropdownMenuLink3" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"> Electronics </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="home?name=electronics">All
+                        <a class="dropdown-item" href="category?name=electronics">All
                             Electronics</a> <a class="dropdown-item" href="product?productId=7">Computers</a>
                         <a class="dropdown-item" href="product?productId=8">HDMI Cables</a> <a
                             class="dropdown-item" href="product?productId=9">Televisions</a>
@@ -91,7 +91,7 @@
                         id="navbarDropdownMenuLink4" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"> Sporting Goods </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="home?name=sporting-goods">All
+                        <a class="dropdown-item" href="category?name=sporting goods">All
                             Sporting Goods</a> <a class="dropdown-item" href="product?productId=10">Nunchucks</a>
                         <a class="dropdown-item" href="product?productId=11">Javelins</a> <a
                             class="dropdown-item" href="product?productId=12">Rocket Skates</a>
@@ -102,7 +102,7 @@
                         id="navbarDropdownMenuLink5" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"> Office Supplies </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="home?name=office-supplies">All
+                        <a class="dropdown-item" href="category?name=office supplies">All
                             Office Supplies</a> <a class="dropdown-item" href="product?productId=13">Staplers</a>
                         <a class="dropdown-item" href="product?productId=14">Paper Shredders</a>
                         <a class="dropdown-item" href="product?productId=15">3D Printers</a>
