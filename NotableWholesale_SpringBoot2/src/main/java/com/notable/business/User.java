@@ -7,12 +7,10 @@ public class User implements Serializable {
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String address1;
-	private String address2;
+	private String street;
 	private String city;
 	private String state;
 	private String zip;
-	private String country;
 	private String password;
 
 	public User() {
@@ -20,27 +18,24 @@ public class User implements Serializable {
 		firstName = "";
 		lastName = "";
 		email = "";
-		address1 = "";
-		address2 = "";
+		street = "";
 		city = "";
 		state = "";
 		zip = "";
-		country = "";
 		password = "";
 	}
 
-	public User(int userId, String firstName, String lastName, String email, String address1, String address2,
-			String city, String state, String zip, String country, String password) {
+	public User(int userId, String firstName, String lastName, String email, String street, String city, String state,
+			String zip, String password) {
+		super();
 		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.address1 = address1;
-		this.address2 = address2;
+		this.street = street;
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
-		this.country = country;
 		this.password = password;
 	}
 
@@ -76,20 +71,12 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getAddress1() {
-		return address1;
+	public String getStreet() {
+		return street;
 	}
 
-	public void setAddress1(String address1) {
-		this.address1 = address1;
-	}
-
-	public String getAddress2() {
-		return address2;
-	}
-
-	public void setAddress2(String address2) {
-		this.address2 = address2;
+	public void setStreet(String street) {
+		this.street = street;
 	}
 
 	public String getCity() {
@@ -116,14 +103,6 @@ public class User implements Serializable {
 		this.zip = zip;
 	}
 
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -132,5 +111,5 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-
+	
 }

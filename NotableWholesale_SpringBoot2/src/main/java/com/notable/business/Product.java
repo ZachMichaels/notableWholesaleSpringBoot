@@ -3,7 +3,7 @@ package com.notable.business;
 import java.text.NumberFormat;
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class Product implements Serializable, Comparable<Product> {
 
 	private int productId;
 	private String name;
@@ -12,7 +12,7 @@ public class Product implements Serializable {
 	private String img;
 	private String category;
 	private int stock;
-
+	
 	public String getImg() {
 		return img;
 	}
@@ -82,4 +82,13 @@ public class Product implements Serializable {
 		this.stock = stock;
 	}
 
+	@Override
+	public int compareTo(Product product) {
+		Double price1 = this.getPrice();
+		Double price2 = product.getPrice();
+		return price1.compareTo(price2);
+	}
+
+
 }
+  
