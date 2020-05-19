@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,7 +24,7 @@ public class LoginController {
 
 	@PostMapping("login")
 	public String loginUser(String email, String password, HttpServletResponse response, HttpServletRequest request) {
-
+		
 		// should only be one user in the list
 		// Make email unique in the users table to ensure this
 		List<User> users = jdbc.query("SELECT firstname, email, password FROM users WHERE email = '" + email + "'",

@@ -3,20 +3,43 @@ package com.notable.business;
 import java.text.NumberFormat;
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class Product implements Serializable, Comparable<Product> {
 
-	//private int productId;
+	private int productId;
 	private String name;
+	private String description;
 	private double price;
+	private String img;
+	private String category;
+	private int stock;
+	
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	public Product() {
 	}
 
-	/*
-	 * public int getProductId() { return productId; }
-	 * 
-	 * public void setProductId(int productId) { this.productId = productId; }
-	 */
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -43,4 +66,29 @@ public class Product implements Serializable {
 		return name;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	@Override
+	public int compareTo(Product product) {
+		Double price1 = this.getPrice();
+		Double price2 = product.getPrice();
+		return price1.compareTo(price2);
+	}
+
+
 }
+  
