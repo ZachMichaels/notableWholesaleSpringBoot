@@ -73,7 +73,7 @@
 	</div>
 </div>
 
-<input type="submit" class="headerButton btn" name= "checkout" value="Remove">
+<input type="submit" class="headerButton btn" name= "checkout" value="checkout">
 
 </c:if>
  <c:if test="${cookie.loggedInCookie.value != 'yes'}">
