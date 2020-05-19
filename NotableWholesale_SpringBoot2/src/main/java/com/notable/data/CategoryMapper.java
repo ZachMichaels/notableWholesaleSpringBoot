@@ -19,6 +19,7 @@ public class CategoryMapper implements RowMapper<Product>{
 		product.setPrice(Double.parseDouble(rs.getString("price")));
 		product.setImg(rs.getString("imageurl"));
 		product.setStock(Integer.parseInt(rs.getString("stock")));
+		product.setCategory(rs.getString("category"));
 		
 		return product;
 	}
