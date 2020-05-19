@@ -55,7 +55,7 @@ pageEncoding="ISO-8859-1"%>
 	  		<c:set var="productName" value="${product.name }"/>
 	  		<c:set var="productNameLowerCase" value="${fn:toLowerCase(productName)}"/>
 	  		
-	        <a href="home?name=${productNameLowerCase}"><img src="images/${product.img }" alt=""></a>
+	        <a href="product?productId=${product.productId}"><img src="images/${product.img }" alt=""></a>
 	        <p class="prodName">${product.name }</p>
 	        
 	        <c:if test="${product.price != 0 }">
