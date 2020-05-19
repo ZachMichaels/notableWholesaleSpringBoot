@@ -12,7 +12,7 @@ public class Product implements Serializable, Comparable<Product> {
 	private String img;
 	private String category;
 	private int stock;
-
+	
 	public String getImg() {
 		return img;
 	}

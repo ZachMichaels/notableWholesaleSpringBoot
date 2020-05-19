@@ -1,6 +1,5 @@
 package com.notable.controllers;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -37,6 +36,7 @@ public class CategoryController {
 	@GetMapping("sortAsc")
 	public String sortAscending(String name, HttpServletRequest request) {
 		
+		System.out.println(name);
 		List<Product> products = jdbc.query("SELECT * FROM products where category = '" + name + "'", new CategoryMapper());
 		
 		Collections.sort(products);
@@ -99,12 +99,36 @@ public class CategoryController {
 	@PostMapping("priceFilter")
 	public String priceFilter(String name, Double minPrice, Double maxPrice, HttpServletRequest request) {
 		
+		System.out.println(name);
+		System.out.println(minPrice);
+		
+		if (minPrice == null) {
+			minPrice = 0.0;
+		}
+		
+		if (maxPrice == null) {
+			maxPrice = Double.MAX_VALUE;
+		}
+		
+		if (minPrice > maxPrice) {
+			Double temp = maxPrice;
+			maxPrice = minPrice;
+			minPrice = temp;
+		}
+
+		
 		List<Product> products = jdbc.query("SELECT * FROM products where category = '" + name + "' AND price > " 
 		+ minPrice + " AND price < " + maxPrice, new CategoryMapper());
-				
+			
+		if (products.isEmpty()) {
+			Product prod = new Product();
+			prod.setCategory(name);
+			products.add(prod);
+		}
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("products", products);
-		
+
 		return "views/category";
 			
 	}

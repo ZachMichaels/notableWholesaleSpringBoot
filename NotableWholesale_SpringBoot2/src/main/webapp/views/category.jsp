@@ -9,7 +9,7 @@ pageEncoding="ISO-8859-1"%>
 
 <head>
 <c:import url="/sharedViews/headMeta.jsp" />
-<title>Groceries</title>
+<title>${products[0].category }</title>
 </head>
 
 <body>
@@ -33,15 +33,19 @@ pageEncoding="ISO-8859-1"%>
 
         <form action="priceFilter" method="post">
           <label for="">Filter by Price</label>
-          <input type="hidden" name="name" value=${products[0].category }>
-          <input type="text" name="minPrice" class="lowPrice" placeholder="Enter Minimum $" value="" />
-          <input type="text" name="maxPrice" class="highPrice" placeholder="Enter Maximum $" value="" />
+          <input type="hidden" name="name" value='${products[0].category }'>
+          <input type="number" step="0.01" min="0.00" name="minPrice" class="lowPrice" placeholder="Enter Minimum $" value="" />
+          <input type="number" step="0.01" min="0.00" name="maxPrice" class="highPrice" placeholder="Enter Maximum $" value="" />
           <button id="filterButton" class="headerButton btn">Go</button>
         </form>
 
       </div>
     </div>
   </div>
+  
+  <c:if test="${products[0].price == 0.00 }">
+	     <p align="center">No products match that criteria</p>
+  </c:if>
   
   <div id="SGProductsStart" class="container home">
     <div class="row featureProducts">
@@ -53,14 +57,18 @@ pageEncoding="ISO-8859-1"%>
 	  		
 	        <a href="home?name=${productNameLowerCase}"><img src="images/${product.img }" alt=""></a>
 	        <p class="prodName">${product.name }</p>
-	        <p class="prodPrice">$${product.price }</p>
+	        
+	        <c:if test="${product.price != 0 }">
+	        <p class="prodPrice">${product.priceCurrencyFormat }</p>
+	        </c:if>
+	        
 	      </div>
 	  </c:forEach>
   	</div>
   </div>
 
 <c:import url="/sharedViews/footer.jsp" />
-	<c:import url="/sharedViews/scripts.jsp" />
+<c:import url="/sharedViews/scripts.jsp" />
 	
 </body>
 
