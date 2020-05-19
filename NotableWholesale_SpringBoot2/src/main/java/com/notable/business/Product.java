@@ -12,7 +12,16 @@ public class Product implements Serializable, Comparable<Product> {
 	private String img;
 	private String category;
 	private int stock;
+	private String searchTerms;
 	
+	public String getSearchTerms() {
+		return searchTerms;
+	}
+
+	public void setSearchTerms(String searchTerms) {
+		this.searchTerms = searchTerms;
+	}
+
 	public String getImg() {
 		return img;
 	}

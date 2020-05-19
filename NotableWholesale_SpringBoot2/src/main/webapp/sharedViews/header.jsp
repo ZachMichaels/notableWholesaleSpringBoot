@@ -8,13 +8,9 @@
                         id="mainLogo" alt=""></a>
                 </div>
                 <div class="col-sm-4" id="searchForm">
-                    <form class="form-inline-custom">
-                        <input class="searchWidth mr-sm-2" type="search"
-                            placeholder="Search" aria-label="Search">
-                        <button class="headerButton btn my-2 my-sm-0" id="searchBtn"
-                            type="submit">
-                            <i class="fa fa-search"></i> Search
-                        </button>
+                    <form class="form-inline-custom" action="search" method="post">
+                        <input class="searchWidth mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchTerm">
+                        <button class="headerButton btn my-2 my-sm-0" id="searchBtn" type="submit"><i class="fa fa-search"></i>Search</button>
                     </form>
                 </div>
 
