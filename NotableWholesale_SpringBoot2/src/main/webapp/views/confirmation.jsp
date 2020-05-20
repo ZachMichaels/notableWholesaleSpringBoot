@@ -16,7 +16,8 @@ pageEncoding="ISO-8859-1"%>
 <c:import url="/sharedViews/header.jsp" />
 
 <div class="center">
-<h1>Purchase Complete</h1>
+<h1>Thank You!</h1>
+<h2>Purchase Complete</h2>
 <p>Order#: 43728001</p>
 </div>
 

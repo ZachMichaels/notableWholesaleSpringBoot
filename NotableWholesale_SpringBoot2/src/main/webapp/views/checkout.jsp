@@ -26,14 +26,14 @@
 					<span class="text-muted">Your cart</span> 
 <!-- 					<span class="badge badge-secondary badge-pill">3</span> -->
 				</h4>
-				<ul class="list-group mb-3">
+				<ul class="list-group mb-3 card">
 
 					<c:forEach var="item" items="${cart.items}">
 						<li
 							class="list-group-item d-flex justify-content-between lh-condensed">
 							<div>
-								<h6 class="my-0">${item.product.name} x ${item.quantity }</h6>
-							</div> <span class="text-muted">${item.product.priceCurrencyFormat}</span>
+								<h6 class="my-0">${item.product.name} <span class="text-muted"></span></h6>
+							</div> <span>${item.product.priceCurrencyFormat} x ${item.quantity } = <strong>$${item.product.price * item.quantity}</strong></span>
 						</li>
 					</c:forEach>
 
