@@ -13,6 +13,7 @@ import com.notable.business.Product;
 
 @Repository
 public class ProductJDBCTemplate implements ProductDAO {
+	
 	private DataSource dataSource;
 	@Autowired
 	private JdbcTemplate jdbcTemplateObject;
