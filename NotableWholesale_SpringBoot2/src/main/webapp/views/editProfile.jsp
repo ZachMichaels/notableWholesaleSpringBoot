@@ -23,6 +23,7 @@
 						<div class="container-fluid" id="nwContainer">
 							<div class="details col-sm-12 product-details">
 								<form class="nwFormEdit" action="update" method="post">
+								<input type="hidden" name="id" value="${users.get(0).userId}">
 									<h3 class="product-title">Account Details</h3>
 									<div class="container">
 										<h4 class="">Log In Details</h4>
@@ -31,7 +32,7 @@
 												<p class="">Email Address:</p>
 											</div>
 											<div class="col-sm-4">
-												<input type="hidden" name="id" value="${users.get(0).userId}">${users.get(0).email}<br>
+												<input type="hidden" name="email" value="${users.get(0).email}">${users.get(0).email}<br>
 											</div>
 										</div>
 										<div class="row">
