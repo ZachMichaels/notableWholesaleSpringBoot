@@ -20,7 +20,7 @@
         <div class="card" id="nwCard">
         <h1>Sign In</h1>
           <div class="container-fluid" id="nwContainer">
-            <form title="" name="LogonForm" method="post" action="register" id="LogonForm" novalidate="novalidate">
+            <form title="" name="LogonForm" method="post" action="login" id="LogonForm" novalidate="novalidate">
             
             <input type="hidden" name="action" value="login">
             
@@ -48,10 +48,6 @@
                 <div class="form-group">
                   <input id="btnWide" type="submit" class="headerButton btn" value="Sign In">
                 </div>
-
-                <!-- 									<div class="form-group"> -->
-                <!-- 										<a href="/ForgotPasswordView">Forgot Password?</a> -->
-                <!-- 									</div> -->
 
                 <hr>
                 <div class="form-group">
