@@ -1,6 +1,6 @@
 # Notable Wholesale Website
 
-A website for Notable Wholsale. an exclusivly e-commerce website based off of the themes of Costco Wholsale.
+A website for Notable Wholesale. an exclusivly e-commerce website based off of the themes of Costco Wholsale.
 
 In this website you are able to order products for delivery. This website also features sign in functionality and features several
 testemonies of people who have used this website.
