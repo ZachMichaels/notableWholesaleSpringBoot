@@ -22,9 +22,6 @@
 							<h1>Cart</h1>
 				<div class="container-fluid" id="nwContainer">
     <c:choose>
-      <c:when test="${emptyCart != null}">
-          <p>Your cart is empty.</p>
-      </c:when>
       <c:when test="${cart == null}">
           <p>Your cart is empty.</p>
       </c:when>
@@ -43,6 +40,7 @@
                 <form action="<c:url value='updateItem'/>" method="post">
 
 				  <input type="hidden" name="name" value="<c:out value='${item.product.name}'/>">
+				  <input type="hidden" name="price" value="<c:out value='${item.product.price}'/>">
                   <input type="number" name='${item.product.name}' class="cartQuantity" min="1" max="100" value="<c:out value='${item.quantity}'/>" id="quantity">                         
                   <input type="submit" class="headerButton btn" name = "action" value="Update">
                 </form>                  
