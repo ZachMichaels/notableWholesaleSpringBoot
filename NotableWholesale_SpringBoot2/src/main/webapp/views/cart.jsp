@@ -14,41 +14,41 @@
 	<c:import url="/sharedViews/header.jsp" />
 
 	<c:if test="${cookie.loggedInCookie.value == 'yes'}">
-	
+
 		<div class="container home">
 			<div class="row">
 				<div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4">
 					<div class="container" id="nwContainer">
 						<div class="card" id="nwCard">
 							<h1>Cart</h1>
-				<div class="container-fluid" id="nwContainer">
-    <c:choose>
-      <c:when test="${cart == null}">
-          <p>Your cart is empty.</p>
-      </c:when>
-      <c:otherwise>
-        <table>
-           <tr>
-            <th class="cartTD">Qty</th>
-						<th class="cartTD">Name</th>
-						<th class="cartTD">Price</th>
-						<th class="cartTD">Amount</th>
-						<th>&nbsp;</th>
-         </tr>
-          <c:forEach var="item" items="${cart.items}">
-            <tr class="cart_row">
-              <td>
-                <form action="<c:url value='updateItem'/>" method="post">
+							<div class="container-fluid" id="nwContainer">
+								<c:choose>
+									<c:when test="${cart == null}">
+										<p>Your cart is empty.</p>
+									</c:when>
+									<c:otherwise>
+										<table>
+											<tr>
+												<th class="cartTD">Qty</th>
+												<th class="cartTD">Name</th>
+												<th class="cartTD">Price</th>
+												<th class="cartTD">Amount</th>
+												<th>&nbsp;</th>
+											</tr>
+											<c:forEach var="item" items="${cart.items}">
+												<tr class="cart_row">
+													<td>
+														<form action="<c:url value='updateItem'/>" method="post">
 
-				  <input type="hidden" name="name" value="<c:out value='${item.product.name}'/>">
-				  <input type="hidden" name="price" value="<c:out value='${item.product.price}'/>">
-                  <input type="number" name='${item.product.name}' class="cartQuantity" min="1" max="100" value="<c:out value='${item.quantity}'/>" id="quantity">                         
-                  <input type="submit" class="headerButton btn" name = "action" value="Update">
-                </form>                  
-              </td>
-              <td class="cartTD">${item.product.name}</td>
-							<td class="cartTD">${item.product.priceCurrencyFormat}</td>
-							<td class="cartTD">${item.totalCurrencyFormat}</td>
+															<input type="hidden" name="name" value="<c:out value='${item.product.name}'/>">
+															<input type="hidden" name="price" value="<c:out value='${item.product.price}'/>">
+															<input type="number" name='${item.product.name}' class="cartQuantity" min="1" max="100" value="<c:out value='${item.quantity}'/>" id="quantity">
+															<input type="submit" class="headerButton btn" name="action" value="Update">
+														</form>
+													</td>
+													<td class="cartTD">${item.product.name}</td>
+													<td class="cartTD">${item.product.priceCurrencyFormat}</td>
+													<td class="cartTD">${item.totalCurrencyFormat}</td>
 
 
 													<td>
@@ -61,6 +61,7 @@
 													</td>
 												</tr>
 											</c:forEach>
+											
 
 
 										</table>
@@ -72,13 +73,15 @@
 				</div>
 			</div>
 		</div>
-
-<a href="checkout"><input type="submit" class="headerButton btn" name="checkout" value="Checkout"></a>
 		
+		<p align="center">${cart.priceCurrencyFormat }</p>
+
+		<a href="checkout"><input type="submit" class="headerButton btn" name="checkout" value="Checkout"></a>
+
 
 	</c:if>
 
-	
+
 	<c:if test="${cookie.loggedInCookie.value != 'yes'}">
 		<p style="text-align:center;">Please sign in to view your cart</p>
 	</c:if>

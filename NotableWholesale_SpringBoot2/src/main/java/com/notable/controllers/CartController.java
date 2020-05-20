@@ -40,6 +40,9 @@ public class CartController {
 		}
 		System.out.println(cart == null);
 		cart.addItem(li);
+		
+		cart.setTotal();
+		
 		session.setAttribute("cart", cart);
 		return showCart(request, response);
 	}
@@ -60,6 +63,9 @@ public class CartController {
 			lineItem.setProduct(product);
 			cart.removeItem(lineItem);
 		}
+		
+		cart.setTotal();
+		
 		// set "new" cart
 		session.setAttribute("cart", cart);
 		return showCart(request, response);
@@ -92,6 +98,9 @@ public class CartController {
 				break;
 			}
 		}
+		
+		cart.setTotal();
+		
 		session.setAttribute("cart", cart);
 		return showCart(request, response);
 	}
