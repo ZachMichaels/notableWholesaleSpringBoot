@@ -30,6 +30,10 @@ public class LoginController {
 		List<User> users = jdbc.query("SELECT * FROM users WHERE email = '" + email + "'",
 				new UserMapper());
 		
+		if (users.isEmpty()) {
+			return "views/loginInvalid";
+		}
+		
 		String emailResult = users.get(0).getEmail();
 		String passwordResult = users.get(0).getPassword();
 		String firstNameResult = users.get(0).getFirstName();
