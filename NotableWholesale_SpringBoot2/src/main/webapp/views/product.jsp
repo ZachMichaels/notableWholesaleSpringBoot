@@ -37,14 +37,10 @@
             <p class="product-description">${product.description}</p>
             <h4 class="price">Price: <span>${product.priceCurrencyFormat}</span></h4>
             <p class="vote"><strong>98%</strong> of buyers enjoyed this product! <strong>(84 votes)</strong></p>
-           <form class="add-to-cart" action="cart" method="POST">
+           <form class="add-to-cart" action="addItem" method="POST">
               <label for="qty-1">Quantity</label>
               <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
-              <input type="hidden" name ="productId" value = '${product.productId}'>
-              <input type="hidden" name="name" value='${product.name}'>
-              <input type="hidden" name="description" value='${product.description}'>
-               <input type="hidden" name="price" value = '${product.price}'>
-              <button name = "action" id = "cart" value="Add" class="headerButton btn">Add to cart</button>
+              <button class="headerButton btn">Add to cart</button>
             </form>
           </div>
         </div>
