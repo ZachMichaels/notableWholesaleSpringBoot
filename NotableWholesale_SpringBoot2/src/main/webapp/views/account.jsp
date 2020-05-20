@@ -23,11 +23,11 @@
 						<div class="container-fluid" id="nwContainer">
 
 							<div class="details col-sm-12 product-details">
-								<a class="headerButton btn" href="orders.jsp" role="button"><i
-									class="fa fa-list-ul"></i> Order History</a> <a
-									class="headerButton btn" href="wishlist.jsp" role="button"><i
+								<a class="headerButton btn" href="home?name=orders" role="button"><i
+									class="fa fa-list-ul"></i> Order History</a><a
+									class="headerButton btn" href="home?name=wishlist" role="button"><i
 									class="fa fa-gift"></i> Wishlist</a> <a class="headerButton btn"
-									href="#" id="editProfBtn" role="button"><i
+									href="home?name=editProfile" role="button"><i
 									class="fa fa-user"></i> Edit Profile</a>
 								<h3 class="product-title">Account Details</h3>
 								<div class="container">
