@@ -20,6 +20,7 @@ public class ProductMapper implements RowMapper<Product> {
 		prod.setImg(rs.getString("imageurl"));
 		prod.setCategory(rs.getString("category"));
 		prod.setStock(rs.getInt("stock"));
+		prod.setSearchTerms(rs.getString("searchTerms"));
 
 		return prod;
 	}
