@@ -54,7 +54,7 @@ public class LoginController {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("users", users);
-
+			
 			Cookie firstNameCookie = new Cookie("firstNameCookie", firstNameResult);
 			firstNameCookie.setMaxAge(60 * 60 * 24 * 365 * 2);
 			firstNameCookie.setPath("/");
@@ -94,6 +94,9 @@ public class LoginController {
 	@GetMapping("logout")
 	public String logOutUser(HttpServletResponse response, HttpServletRequest request) {
 
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
 		Cookie[] cookies = request.getCookies();
 		for (Cookie cookie : cookies) {
 			if (cookie.getName().equalsIgnoreCase("loggedInCookie")) {

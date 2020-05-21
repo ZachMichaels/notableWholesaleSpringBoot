@@ -69,6 +69,8 @@ public class CheckoutController {
 		
 		List<Order> order = jdbcTemplate.query("SELECT orderid FROM orders ORDER BY orderid DESC LIMIT 1", new OrderMapper());
 		session.setAttribute("order", order);
+		
+		session.removeAttribute("cart");
 
 		return "views/confirmation";
 	}

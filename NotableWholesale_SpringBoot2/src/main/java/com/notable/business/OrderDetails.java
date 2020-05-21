@@ -1,13 +1,25 @@
 package com.notable.business;
 
+import java.text.NumberFormat;
+
 public class OrderDetails {
 
-	int orderId;
-	String productName;
-	double price;
-	int quantity;
-	double productTotal;
-	double orderTotal;
+	private int orderId;
+	private String productName;
+	private double price;
+	private int quantity;
+	private double productTotal;
+	private double orderTotal;
+	
+	public String getProductCurrencyFormat() {
+		NumberFormat currency = NumberFormat.getCurrencyInstance();
+		return currency.format(productTotal);
+	}
+	
+	public String getOrderCurrencyFormat() {
+		NumberFormat currency = NumberFormat.getCurrencyInstance();
+		return currency.format(orderTotal);
+	}
 
 	public int getOrderId() {
 		return orderId;

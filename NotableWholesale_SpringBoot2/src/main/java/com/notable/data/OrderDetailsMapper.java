@@ -21,6 +21,7 @@ public class OrderDetailsMapper implements RowMapper<OrderDetails> {
 		od.setProductTotal(rs.getDouble("ProductTotal"));
 		od.setOrderTotal(rs.getDouble("OrderTotal"));
 
+
 		return od;
 	}
 
