@@ -21,7 +21,7 @@
 					<div class="card" id="nwCard">
 						<h1>User Profile</h1>
 						<div class="container-fluid" id="nwContainer">
-								<a class="headerButton btn" href="home?name=orders" role="button"><i
+								<a class="headerButton btn" href="myOrders" role="button"><i
 									class="fa fa-list-ul"></i> Order History</a><a
 									class="headerButton btn" href="home?name=wishlist" role="button"><i
 									class="fa fa-gift"></i> Wishlist</a> <a class="headerButton btn"
