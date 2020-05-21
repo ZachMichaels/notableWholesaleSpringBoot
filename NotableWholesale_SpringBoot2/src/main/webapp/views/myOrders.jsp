@@ -16,34 +16,6 @@
 	<div class="container home">
 		<h1>My Orders</h1>
 
-<<<<<<< HEAD
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Order#</th>
-      <th scope="col">Product</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Product Total</th>
-      <th scope="col">Order Total</th>
-      <th scope="col">Order Status</th>
-    </tr>
-  </thead>
-  <tbody>								
-   <c:forEach items="${orderDetails }" var="orderDetails">
-    <tr>
-      <td>${orderDetails.orderId }</td>
-      <td>${orderDetails.productName }</td>
-      <td>${orderDetails.price }</td>
-      <td>${orderDetails.quantity }</td>
-      <td>${orderDetails.productCurrencyFormat }</td>
-      <td>${orderDetails.orderCurrencyFormat }</td>
-      <td>Processing</td>
-    </tr>
-    </c:forEach>
-  </tbody>
-</table>
-=======
 		<table class="table">
 			<thead>
 				<tr>
@@ -91,7 +63,6 @@
 			</tbody>
 		</table>
 	</div>
->>>>>>> refs/remotes/origin/masterSTAGING
 
 	<c:import url="/sharedViews/footer.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
