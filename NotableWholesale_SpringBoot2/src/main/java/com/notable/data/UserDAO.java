@@ -22,8 +22,8 @@ public interface UserDAO {
 	//get the user from a user id
 	public User getUser(Integer userId);
 	
-	//lists out the products
-	public List<User> userList();
+	//lists out the users
+	public List<User> userList(String email);
 	
 	//ostensibly delete product given a name
 	public void delete(String email);

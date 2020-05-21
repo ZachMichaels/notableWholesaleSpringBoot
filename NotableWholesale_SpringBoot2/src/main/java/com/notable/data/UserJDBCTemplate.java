@@ -32,14 +32,14 @@ public class UserJDBCTemplate implements UserDAO {
 		}
 
 		public User getUser(Integer id) {
-			String SQL = "select * from Users where usertId = " + id;
+			String SQL = "select * from Users where userId = " + id;
 			User user = jdbcTemplateObject.queryForObject(SQL, new UserMapper());
-
+			System.out.println("Selected User= " + user.getEmail() + " from userID= " + id);
 			return user;
 		}
 
-		public List<User> userList() {
-			String SQL = "select * from Users";
+		public List<User> userList(String email) {
+			String SQL = "select * from Users where email = " + '"' + email  + '"';
 			List<User> users = jdbcTemplateObject.query(SQL, new UserMapper());
 			return users;
 		}

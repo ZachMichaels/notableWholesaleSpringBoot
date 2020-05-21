@@ -21,7 +21,7 @@ public class CartController {
 	@Autowired
 	private ProductJDBCTemplate jdbc;
 
-	@PostMapping("cart")
+	@GetMapping("cart")
 	public String showCart(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		String value = (String) session.getAttribute("failedOrder");
@@ -56,6 +56,7 @@ public class CartController {
 			prod.setStock(stock);
 			jdbc.updateCartItem(prod.getProductId(), prod.getName(), prod.getPrice(), stock);
 			cart.addItem(li);
+			cart.setTotal();
 			session.setAttribute("failedOrder", null);
 		} else {
 			session.setAttribute("failedOrder", "seen");
@@ -95,7 +96,12 @@ public class CartController {
 
 		if (cart.getCount() == 0) {
 			cart = null;
+		} else {
+			cart.setTotal();
 		}
+
+		
+		
 
 		// set "new" cart
 		session.setAttribute("failedOrder", null);
@@ -142,6 +148,9 @@ public class CartController {
 			System.out.println("There's not enough item here to add");
 		}
 
+		
+		cart.setTotal();
+		
 		session.setAttribute("cart", cart);
 		return "/views/cart";
 	}
