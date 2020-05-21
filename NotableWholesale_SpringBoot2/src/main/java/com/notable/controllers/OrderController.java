@@ -1,6 +1,9 @@
 package com.notable.controllers;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -35,18 +38,11 @@ public class OrderController {
 				"INNER JOIN orders on orderdetails.OrderID = orders.OrderID\r\n" + 
 				"WHERE orders.userId = '" + userId + "' ORDER BY orderdetails.OrderId",
 				new OrderDetailsMapper());
-		
-		
+
 		
 		
 		session.setAttribute("orderDetails", orderDetails);
-		
-//		int i = 0;
-//		for (OrderDetails od : orderDetails) {
-//			if () {
-//				
-//			}
-//		}
+			
 		
 
 		return "views/myOrders";

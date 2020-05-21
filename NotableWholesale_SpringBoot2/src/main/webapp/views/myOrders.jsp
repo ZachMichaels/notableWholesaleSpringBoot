@@ -27,8 +27,7 @@
       <th scope="col">Order Status</th>
     </tr>
   </thead>
-  <tbody>
-  													
+  <tbody>								
    <c:forEach items="${orderDetails }" var="orderDetails">
     <tr>
       <td>${orderDetails.orderId }</td>
