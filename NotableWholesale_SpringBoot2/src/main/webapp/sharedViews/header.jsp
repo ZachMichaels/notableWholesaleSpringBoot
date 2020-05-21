@@ -30,7 +30,7 @@
 	                        <div class="dropdown-menu"
 	                            aria-labelledby="navbarDropdownMenuLink">
 	                            <a class="dropdown-item" href="home?name=account"><i class="fa fa-user"></i> User Profile</a> <a class="dropdown-item" href="myOrders"><i class="fa fa-list-ul"></i> Order History</a> 
-	                            <a class="dropdown-item" href="home?name=wishlist.jsp"><i class="fa fa-gift"></i> Wishlist</a> 
+	                            <a class="dropdown-item" href="home?name=wishlist"><i class="fa fa-gift"></i> Wishlist</a> 
 	                            <a class="dropdown-item" href="logout"><i class="fa fa-power-off"></i> Log Out</a>
 	                        </div>
            				</c:when>
