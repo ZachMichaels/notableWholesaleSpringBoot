@@ -60,3 +60,8 @@ form input.qty {
 #shipping span {
 	margin-left: 1em;
 }
+
+.cart_border{
+	border: 2px solid;
+	border-radius: 5px;
+}
