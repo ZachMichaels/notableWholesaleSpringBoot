@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
   <c:import url="/sharedViews/header.jsp" />
   <c:if test="${cookie.loggedInCookie.value == 'yes'}">
 	<div class="container home">
@@ -75,6 +76,7 @@
 			</c:choose>
 		</div>
 	</div>
+
 
 
 	</c:if>
