@@ -19,13 +19,13 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">Order#</th>
+					<th scope="col">Order #</th>
 					<th scope="col">Product</th>
 					<th scope="col">Price</th>
 					<th scope="col">Quantity</th>
 					<th scope="col">Product Total</th>
-					<th scope="col">Order Total</th>
 					<th scope="col">Order Status</th>
+					<th scope="col">Order Total</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -47,16 +47,17 @@
 						varStatus="loop">
 						<tr>
 							<c:if test="${loop.index == 0}">
-								<td rowspan="${entry.value.size()}">${orderDetails.orderId}</td>
+								<td rowspan="${entry.value.size()}" style="border-right:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${orderDetails.orderId}</td>
 							</c:if>
 							<td>${orderDetails.productName}</td>
 							<td>${orderDetails.price}</td>
 							<td>${orderDetails.quantity}</td>
 							<td>${orderDetails.productCurrencyFormat}</td>
-							<c:if test="${loop.index == 0}">
-								<td rowspan="${entry.value.size()}">${orderDetails.orderCurrencyFormat}</td>
-							</c:if>
 							<td>Processing</td>
+							<c:if test="${loop.index == 0}">
+								<td rowspan="${entry.value.size()}" style="border-left:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${orderDetails.orderCurrencyFormat}</td>
+							</c:if>
+
 						</tr>
 					</c:forEach>
 				</c:forEach>
