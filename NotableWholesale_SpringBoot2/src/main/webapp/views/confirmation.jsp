@@ -9,7 +9,7 @@ pageEncoding="ISO-8859-1"%>
 
 <head>
 <c:import url="/sharedViews/headMeta.jsp" />
-<title>${products[0].category }</title>
+<title>Confirmation</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@ pageEncoding="ISO-8859-1"%>
 <div class="center">
 <h1>Thank You!</h1>
 <h2>Purchase Complete</h2>
-<p>Order#: 43728001</p>
+<p>Order#: ${order.get(0).orderId }</p>
 </div>
 
 <c:import url="/sharedViews/footer.jsp" />
