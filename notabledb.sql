@@ -26,7 +26,8 @@ CREATE TABLE Products (
 	imageurl varchar(200) NOT NULL,
 	category varchar(50) NOT NULL,
 	stock int NOT NULL,
-    searchTerms varchar(500) NOT NULL
+    	searchTerms varchar(500) NOT NULL,
+	CONSTRAINT stockCheck CHECK (stock >=0)
     );
     
     INSERT INTO Products VALUES 
