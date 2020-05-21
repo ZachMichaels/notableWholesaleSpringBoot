@@ -53,10 +53,11 @@
 							<td>${orderDetails.price}</td>
 							<td>${orderDetails.quantity}</td>
 							<td>${orderDetails.productCurrencyFormat}</td>
+							<td>Processing</td>
 							<c:if test="${loop.index == 0}">
 								<td rowspan="${entry.value.size()}">${orderDetails.orderCurrencyFormat}</td>
 							</c:if>
-							<td>Processing</td>
+
 						</tr>
 					</c:forEach>
 				</c:forEach>
