@@ -13,6 +13,7 @@
 <body>
 	<c:import url="/sharedViews/header.jsp" />
 
+<h1 class="center">My Orders</h1>
 
 <table class="table">
   <thead>
@@ -23,6 +24,7 @@
       <th scope="col">Quantity</th>
       <th scope="col">Product Total</th>
       <th scope="col">Order Total</th>
+      <th scope="col">Order Status</th>
     </tr>
   </thead>
   <tbody>
@@ -33,8 +35,9 @@
       <td>${orderDetails.productName }</td>
       <td>${orderDetails.price }</td>
       <td>${orderDetails.quantity }</td>
-      <td>${orderDetails.productTotal }</td>
-      <td>${orderDetails.orderTotal }</td>
+      <td>${orderDetails.productCurrencyFormat }</td>
+      <td>${orderDetails.orderCurrencyFormat }</td>
+      <td>Processing</td>
     </tr>
     </c:forEach>
   </tbody>
