@@ -12,40 +12,49 @@
 
 <body>
   <c:import url="/sharedViews/header.jsp" />
-  
-    <!--Actual Cart Stuff-->
-    <form id="shopping-cart" action="cart.jsp" method="post">
-      <table class="shopping-cart">
-          <thead>
-              <tr>
-                  <th scope="col">Item</th>
-                  <th scope="col">Qty</th>
-                  <th scope="col">Price</th>
-              </tr>
-              <p class = "test"></p>
-          </thead>
-          <tbody></tbody>
-      </table>
-      <p id="sub-total">
-        <strong>Sub Total</strong>: <span id="stotal"></span>
-      </p>
-      <ul id="shopping-cart-actions">
-          <li>
-              <input type="submit" name="update" id="update-cart" class="headerButton buttons my-2 my-sm-0" value="Update Cart" />
-          </li>
-          <li>
-              <input type="submit" name="delete" id="empty-cart" class="headerButton buttons my-2 my-sm-0" value="Empty Cart" />
-          </li>
-          <li>
-              <a href="home.jsp" class="buttons my-2 my-sm-0">Continue Shopping</a>
-          </li>
-          <li>
-              <a href="checkout.jsp" class="buttons my-2 my-sm-0">Go To Checkout</a>
-          </li>
-      </ul>
-    </form>
 
-    <c:import url="/sharedViews/footer.jsp" />
+	<div class="ly">
+		<table class="ck" data-sort="table">
+			<thead>
+				<tr>
+					<th><input type="checkbox" class="bsn" id="selectAll"></th>
+					<th>Order ID</th>
+					<th>Amount</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<c:forEach>
+					
+					</c:forEach>
+					<td><input type="checkbox" class="bso"></td>
+					<td><a href="#">#10001</a></td>
+					<td>Order ID</td>
+					<td>01/01/2015</td>
+				</tr>
+		</table>
+	</div>
+
+	<div class="avv">
+		<nav>
+			<ul class="qn">
+				<li class="qp"><a class="qo" href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span> <span class="adp">Previous</span>
+				</a></li>
+				<li class="qp active"><a class="qo" href="#">1</a></li>
+				<li class="qp"><a class="qo" href="#">2</a></li>
+				<li class="qp"><a class="qo" href="#">3</a></li>
+				<li class="qp"><a class="qo" href="#">4</a></li>
+				<li class="qp"><a class="qo" href="#">5</a></li>
+				<li class="qp"><a class="qo" href="#" aria-label="Next"> <span
+						aria-hidden="true">&raquo;</span> <span class="adp">Next</span>
+				</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<c:import url="/sharedViews/footer.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
 
 </body>
