@@ -69,4 +69,12 @@ public class OrderDetails {
 		this.orderTotal = orderTotal;
 	}
 
+	@Override
+	public String toString() {
+		return "OrderDetails [orderId=" + orderId + ", productName=" + productName + ", price=" + price + ", quantity="
+				+ quantity + ", productTotal=" + productTotal + ", orderTotal=" + orderTotal + "]";
+	}
+	
+	
+
 }
