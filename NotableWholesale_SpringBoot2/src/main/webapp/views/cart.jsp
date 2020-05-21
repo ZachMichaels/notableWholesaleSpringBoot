@@ -10,8 +10,15 @@
 <title>Cart</title>
 </head>
 
+
+
+
 <body>
+
+
   <c:import url="/sharedViews/header.jsp" />
+  
+  
 
   <c:if test="${cookie.loggedInCookie.value == 'yes'}">
       <div class="container home">
@@ -21,11 +28,16 @@
 			<div class="card" id="nwCard">
 							<h1>Cart</h1>
 				<div class="container-fluid" id="nwContainer">
+  <c:if test="${failedOrder != null }">
+  	Your Previous Transaction was unsuccessful due to inventory constraints. We apologize for the inconvenience.
+  </c:if>
+  
     <c:choose>
       <c:when test="${cart == null}">
           <p>Your cart is empty.</p>
       </c:when>
       <c:otherwise>
+      	
         <table>
            <tr>
             <th class="cartTD">Qty</th>
@@ -38,7 +50,7 @@
             <tr class="cart_row">
               <td>
                 <form action="<c:url value='updateItem'/>" method="post">
-
+				  <input type="hidden" name="id" value="<c:out value='${item.product.productId }'/>">
 				  <input type="hidden" name="name" value="<c:out value='${item.product.name}'/>">
 				  <input type="hidden" name="price" value="<c:out value='${item.product.price}'/>">
                   <input type="number" name='${item.product.name}' class="cartQuantity" min="1" max="100" value="<c:out value='${item.quantity}'/>" id="quantity">                         
@@ -51,8 +63,9 @@
 
               <td>
                 <form action="<c:url value='removeItem'/>" method="post">
-
+				  <input type="hidden" name="id" value="<c:out value='${item.product.productId }'/>">
                   <input type="hidden" name="name" value="<c:out value='${item.product.name}'/>">
+                  <input type="hidden" name="quantity" value ='${item.quantity }'/>
                   <input type="submit" class="headerButton btn" name= "action" value="Remove">
 
                 </form>                  
