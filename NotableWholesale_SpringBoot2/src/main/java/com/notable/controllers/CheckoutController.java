@@ -57,6 +57,7 @@ public class CheckoutController {
 		
 		int userId = users.get(0).getUserId();
 		
+		// Update the Orders Table
 		jdbc.updateOrders(email, price, status);
 		
 		for (LineItem lineItem : cart.getItems()) {
@@ -64,6 +65,7 @@ public class CheckoutController {
 			int productId = lineItem.getProduct().getProductId();
 			int quantity = lineItem.getQuantity();
 			
+			// Update the OrderDetails Table
 			jdbc.updateOrderDetails(productId, quantity);
 		}
 		
