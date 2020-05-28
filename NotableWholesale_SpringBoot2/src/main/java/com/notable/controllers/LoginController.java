@@ -76,6 +76,10 @@ public class LoginController {
 		
 			return "views/loginInvalid";
 		}
+		
+		if (emailResult.equals("admin@notable.com")) {
+			return "views/admin";
+		}
 
 		return "index";
 	}
