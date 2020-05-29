@@ -17,36 +17,55 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Administrator Page</h1>
-				<a href="resupply"><button class="headerButton btn">Order Products</button></a>
-	<button class="headerButton btn">View Analytics</button>
-	<button class="headerButton btn">Submit IT Ticket</button>
+				<a href="resupply"><button class="headerButton btn">Order
+						Products</button></a>
+				<button class="headerButton btn">View Analytics</button>
+				<button class="headerButton btn">Submit IT Ticket</button>
 			</div>
 		</div>
 	</div>
-	
-<div class="row justify-content-center">	
-	
-		<table class="table w-50 center">
-			 	<thead>
-			    <tr>
-			      <th scope="col">Prod ID</th>
-			      <th scope="col">Name</th>
-			      <th scope="col">Category</th>
-			      <th scope="col">Stock</th>
-			    </tr>
-			  </thead>
-			<c:forEach var="product" items="${products }">
-			  <tbody>
-			    <tr>
-			      <td>${product.productId }</td>
-			      <td>${product.name }</td>
-			      <td>${product.category }</td>
-			      <td>${product.stock }</td>
-			    </tr>
-			  </tbody>	
-			</c:forEach>
-		</table>
-	
+
+	<div class="row justify-content-center">
+
+			<table class="table w-75 center">
+
+				<thead>
+					<tr>
+						<th scope="col">Prod ID</th>
+						<th scope="col">Name</th>
+						<th scope="col">Category</th>
+						<th scope="col">Current Stock</th>
+						<th scope="col">Stock to Order</th>
+
+					</tr>
+				</thead>
+
+
+				<c:forEach var="product" items="${products }">
+					<tbody>
+						<tr>
+							<td>${product.productId }</td>
+							<td>${product.name }</td>
+							<td>${product.category }</td>
+							<td>${product.stock }</td>
+
+<!-- 							<td> -->
+<%-- 								<input type="hidden" name="${product.productId }" value="0"> --%>
+<!-- 								<input type="number" name="quantity" value="0"> -->
+<!-- 							</td> -->
+							<td>
+								<form class="add-to-cart" action="addSupplies" method="POST">
+								<input type="hidden" name="id" value="${product.productId }">
+								<input type="number" name="quantity" value="0">
+	              				<input class="headerButton btn" type="submit" value="Add">
+	             				</form>
+							</td>
+
+						</tr>
+					</tbody>
+				</c:forEach>
+			</table>
+
 	</div>
 	<c:import url="/sharedViews/footer.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
