@@ -25,7 +25,7 @@ public class CartController {
 	public String showCart(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		String value = (String) session.getAttribute("failedOrder");
-		if(value.equals("seen")) {
+		if(value != null && value.equals("seen")) {
 			session.setAttribute("failedOrder", null);
 		}
 		return "/views/cart";
