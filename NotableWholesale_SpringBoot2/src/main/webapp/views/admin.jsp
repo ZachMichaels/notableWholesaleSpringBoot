@@ -33,6 +33,7 @@
 			      <th scope="col">Name</th>
 			      <th scope="col">Category</th>
 			      <th scope="col">Stock</th>
+			      <th scope="col">Quantity</th>
 			    </tr>
 			  </thead>
 			<c:forEach var="product" items="${products }">
@@ -42,10 +43,18 @@
 			      <td>${product.name }</td>
 			      <td>${product.category }</td>
 			      <td>${product.stock }</td>
-			    </tr>
+			      <td>
+				    <form action="supplies">
+				       <input type="number" name="amountRequested" value="0"/>
+					   <c:set target='${StandingOrder}' property='${StandingOrder[product.productId]}' value = '${amountRequested}'/>
+			      	   <button type="submit">Shiet dawg</button>
+			      	</form>
+			      </td>
+			     </tr>
 			  </tbody>	
 			</c:forEach>
 		</table>
+		
 	
 	</div>
 	<c:import url="/sharedViews/footer.jsp" />
