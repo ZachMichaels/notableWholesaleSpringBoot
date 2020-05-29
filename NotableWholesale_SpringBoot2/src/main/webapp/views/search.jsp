@@ -44,7 +44,7 @@ pageEncoding="ISO-8859-1"%>
   </div>
   
   <c:if test="${empty products }">
-	     <p align="center">No products match that criteria</p>
+	     <p class="center">No products match that criteria</p>
   </c:if>
   
   <div id="SGProductsStart" class="container home">
