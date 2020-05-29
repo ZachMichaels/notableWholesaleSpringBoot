@@ -10,6 +10,16 @@ public class Resupply {
 	public Resupply() {
 
 	}
+	
+	
+
+	public Resupply(int productId, int amountRequested) {
+		super();
+		this.productId = productId;
+		this.amountRequested = amountRequested;
+	}
+
+
 
 	public int getProductId() {
 		return productId;
@@ -42,5 +52,14 @@ public class Resupply {
 	public void setAmountRequested(int amountRequested) {
 		this.amountRequested = amountRequested;
 	}
+
+	
+
+	@Override
+	public String toString() {
+		return "Resupply [productId=" + productId + ", amountRequested=" + amountRequested + "]";
+	}
+	
+	
 
 }
