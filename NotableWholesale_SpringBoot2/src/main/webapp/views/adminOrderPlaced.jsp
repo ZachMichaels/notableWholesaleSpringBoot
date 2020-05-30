@@ -11,11 +11,12 @@
 </head>
 
 <body>
-	<c:import url="/sharedViews/adminLoginHeader.jsp" />
+	<c:import url="/sharedViews/adminHeader.jsp" />
 
 	<div class="container home">
 		<div class="row">
 			<div class="col-md-12">
+				<h2 style="color:red">Order complete</h2>
 				<h3>Admin Menu</h3>
 				<a href="resupply"><button class="headerButton btn">New Order</button></a>
 				<a href="adminCart"><button class="headerButton btn">Cart</button></a>
@@ -28,7 +29,7 @@
 		</div>
 	</div>
 
-	<c:import url="/sharedViews/adminFooter.jsp" />
+	<c:import url="/sharedViews/footer.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
 <body>
 

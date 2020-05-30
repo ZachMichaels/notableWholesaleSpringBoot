@@ -11,12 +11,13 @@
 </head>
 
 <body>
-	<c:import url="/sharedViews/header.jsp" />
+	<c:import url="/sharedViews/adminHeader.jsp" />
 
 	<div class="container home">
 		<div class="row">
 			<div class="col-md-12">
 				<a href="resupply"><button class="headerButton btn">New Order</button></a>
+				<a href="adminCart"><button class="headerButton btn">Cart</button></a>
 				<a href="adminOrders"><button class="headerButton btn">View History</button></a>
 				<a href="logout"><button class="headerButton btn">Log Out</button></a>
 				<h1>New Order</h1>
@@ -60,9 +61,19 @@
 					</tbody>
 				</c:forEach>
 			</table>
-
 	</div>
-	<c:import url="/sharedViews/footer.jsp" />
+	
+	<div class="container home">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="resupply"><button class="headerButton btn">New Order</button></a>
+				<a href="adminCart"><button class="headerButton btn">Cart</button></a>
+				<a href="adminOrders"><button class="headerButton btn">View History</button></a>
+				<a href="logout"><button class="headerButton btn">Log Out</button></a>	
+			</div>
+		</div>
+	</div>
+	<c:import url="/sharedViews/adminFooter.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
 <body>
 

@@ -12,7 +12,7 @@
 
 <body>
 
-  <c:import url="/sharedViews/header.jsp" />
+  <c:import url="/sharedViews/adminHeader.jsp" />
   
   <div class="container home">
 		<div class="row">
@@ -90,7 +90,7 @@
 	<c:if test="${cookie.loggedInCookie.value != 'yes'}">
 		<p style="text-align:center;">Please sign in to view your cart</p>
 	</c:if>
-	<c:import url="/sharedViews/footer.jsp" />
+	<c:import url="/sharedViews/adminFooter.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
 
 </body>

@@ -57,7 +57,7 @@ public class SuppliesController {
 		
 		System.out.println("Count: " + cart.getCount());
 		
-		return "views/adminCart";
+		return "views/admin";
 	}
 	
 
@@ -103,7 +103,7 @@ public class SuppliesController {
 		String temp = response.getBody();
 		System.out.println(temp);
 		
-		mv.setViewName("views/admin");
+		mv.setViewName("views/adminOrderPlaced");
 		mv.addObject("cart", cart);
 		
 		return mv;
