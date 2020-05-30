@@ -32,16 +32,5 @@ public class ResupplyController {
 
 		return "views/admin";
 	}
-	
-	@GetMapping("supplies")
-	public String getOrderConfirmation(HttpServletRequest request, HashMap<Integer,Integer> StandingOrder) {
-		
-		Set<Integer> keys = StandingOrder.keySet();
-		for(Integer k: keys) {
-			System.out.println(k + ":" + StandingOrder.get(k));
-		}
-				
-		return "views/admin";
-	}
 
 }

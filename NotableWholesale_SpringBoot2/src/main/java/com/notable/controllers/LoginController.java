@@ -85,18 +85,7 @@ public class LoginController {
 		
 		//login as admin
 		if (emailResult.equals("admin@notable.com")) {
-			
-			//create a hashmap full of productid as key with 0(amount requested) as value
-			HashMap<Integer,Integer> so = new HashMap<Integer,Integer>();
-			List<Product> product = ProductJDBC.productList();
-			//make map and set attribute
-			for(Product p : product) {
-				so.put(p.getProductId(),0);
-			}
-			
-			HttpSession session = request.getSession();
-			session.setAttribute("StandingOrder", so);
-			return "views/admin";
+			return "adminIndex";
 		}
 
 		return "index";
