@@ -60,7 +60,7 @@ public class SuppliesController {
 		return "views/adminCart";
 	}
 	
-	//@PutMapping(produces = {"application/json"})
+
 	@GetMapping("adminSubmitOrder")
 	public ModelAndView submitOrder(HttpServletRequest request, ModelAndView mv) {
 		HttpSession session = request.getSession();
