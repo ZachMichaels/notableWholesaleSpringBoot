@@ -34,14 +34,14 @@ CREATE TABLE Products (
 	('2','Crackers', 'Beluga Sturgeon Caviar flavored crackers.', '3.89','crackers.jpg','Groceries','30', 'groceries grocery food crackers snacks snack'),
 	('3','Free-Range Tofu', '100% grass-fed tofu!','6.99','tofu.jpg','Groceries','30', 'groceries grocery food tofu snacks snack'),
     ('4','Fossilized Dinosaur Egg', 'Aged to perfection, this delicious dino egg will satisfy your craving','11.49','dinosaurEgg.jpg','Groceries','30', 'groceries grocery food dinosaur egg snacks snack'),
-    ('5','Wood Chips', 'Perfect for a snack or salad topping. Full of fiber!','8.49','woodchips.jpg','Groceries','30', 'groceries grocery food wood chips woodchips snacks snack'),
+    ('5','BBQ Wood Chips', 'Perfect for a snack or salad topping. Full of fiber!','8.49','woodchips.jpg','Groceries','30', 'groceries grocery food wood chips woodchips snacks snack'),
     ('6','Chocolate Covered Scorpions', 'Mmm a delicious treat for any occasion','7.29','scorpions.jpg','Groceries','30', 'groceries grocery food chocolate scorpions snacks snack'),
     
 	('7', 'Stylish Romphim', '50% shirt, 50% pant, 100% stylish!','59.99','romphim.jpg','Clothing','30', 'clothes clothing attire romphim'),
 	('8', 'Onesie', 'Never take your clothes off again!', '49.99','onesie.jpg','Clothing','30', 'clothes clothing attire onesie'),
 	('9', 'Snuggy', 'Thanks to our patented technology, you can now wear your blanket as a hoodie!','29.99','snuggy.jpg','Clothing','30', 'clothes clothing attire snuggy'),
     ('10', 'Propeller Hat', 'Perfect for date night at a classy restaurant', '24.49','propellerHat.jpg','Clothing','30', 'clothes clothing attire propeller hat'),
-    ('11', 'Athletic Fruit Shirt', 'Look your best in the gym while wearing this amazing strawberry workout tshirt', '34.49','workoutShirt.jpg','Clothing','30', 'clothes clothing attire workout shirt fitness'),
+    ('11', 'Mens Athletic Shirt', 'Look your best in the gym while wearing this amazing strawberry workout tshirt', '34.49','workoutShirt.jpg','Clothing','30', 'clothes clothing attire workout shirt fitness'),
     ('12', 'Teddy Bear Jacket', 'Stylish and warm, what more could you ask for!', '84.99','teddyBearJacket.jpg','Clothing','30', 'clothes clothing attire teddy bear jacket'),
     
 	('13', 'Calculator', 'Fast calculations as well as gaming. The one-in-all rig!','12.99','black-calc.jfif','Electronics','30', 'electronics electronic tech calculator'),
