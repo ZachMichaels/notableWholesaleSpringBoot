@@ -12,16 +12,28 @@
 
 <body>
 
-  <c:import url="/sharedViews/header.jsp" />
+  <c:import url="/sharedViews/adminHeader.jsp" />
+  
+  <div class="container home">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="resupply"><button class="headerButton btn">New Order</button></a>
+				<a href="adminCart"><button class="headerButton btn">Cart</button></a>
+				<a href="adminOrders"><button class="headerButton btn">View History</button></a>
+				<a href="logout"><button class="headerButton btn">Log Out</button></a>
+			</div>
+		</div>
+	</div>
+	
   <c:if test="${cookie.loggedInCookie.value == 'yes'}">
 	<div class="container home">
 		<div class="card">
-			<h1 align="center">Cart</h1>
+			<h1 align="center">Admin Cart</h1>
 			  <c:if test="${failedOrder != null }">
   				Your Previous Transaction was unsuccessful due to inventory constraints. We apologize for the inconvenience.
   			  </c:if>
 			<c:choose>
-				<c:when test="${cart == null}">
+				<c:when test="${adminCart == null}">
 					<p>Your cart is empty.</p>
 				</c:when>
 				<c:otherwise>
@@ -29,14 +41,10 @@
 						<tr>
 							<th class="cartTD">Qty</th>
 							<th class="cartTD">Name</th>
-							<th class="cartTD">Price</th>
-							<th class="cartTD">Amount</th>
 							<th>&nbsp;</th>
 						</tr>
-						
-						
-											
-				       <c:forEach var="item" items="${cart.items}">
+															
+				       <c:forEach var="item" items="${adminCart.items}">
 			            <tr class="cart_row">
 			              <td>
 			                <form action="<c:url value='updateItem'/>" method="post">
@@ -51,8 +59,6 @@
 						
 						
 						<td class="cartTD">${item.product.name}</td>
-						<td class="cartTD">${item.product.priceCurrencyFormat}</td>
-						<td class="cartTD">${item.totalCurrencyFormat}</td>
 						<td class = "cartTD">
 			                <form action="<c:url value='removeItem'/>" method="post">
 							  <input type="hidden" name="id" value="<c:out value='${item.product.productId }'/>">
@@ -67,10 +73,9 @@
 
 
 					</table>
-					<p align="center"><strong>Total Price: ${cart.priceCurrencyFormat }</strong></p>
 					<p align="center">
-						<a href="checkout"><input type="submit"
-							class="headerButton btn" name="checkout" value="Checkout"></a>
+						<a href="adminSubmitOrder"><input type="submit"
+							class="headerButton btn" name="checkout" value="Place Order"></a>
 					</p>
 				</c:otherwise>
 			</c:choose>
@@ -85,7 +90,7 @@
 	<c:if test="${cookie.loggedInCookie.value != 'yes'}">
 		<p style="text-align:center;">Please sign in to view your cart</p>
 	</c:if>
-	<c:import url="/sharedViews/footer.jsp" />
+	<c:import url="/sharedViews/adminFooter.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
 
 </body>

@@ -45,4 +45,11 @@ public class LineItem implements Serializable {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         return currency.format(this.getTotal());
     }
+
+	@Override
+	public String toString() {
+		return "LineItem [lineItemId=" + lineItemId + ", product=" + product + ", quantity=" + quantity + "]";
+	}
+    
+    
 }

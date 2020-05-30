@@ -13,35 +13,57 @@
 <body>
 	<c:import url="/sharedViews/header.jsp" />
 
-<h1 class="center">My Orders</h1>
+	<div class="container home">
+		<h1>My Orders</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Order#</th>
-      <th scope="col">Product</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Product Total</th>
-      <th scope="col">Order Total</th>
-      <th scope="col">Order Status</th>
-    </tr>
-  </thead>
-  <tbody>
-  													
-   <c:forEach items="${orderDetails }" var="orderDetails">
-    <tr>
-      <td>${orderDetails.orderId }</td>
-      <td>${orderDetails.productName }</td>
-      <td>${orderDetails.price }</td>
-      <td>${orderDetails.quantity }</td>
-      <td>${orderDetails.productCurrencyFormat }</td>
-      <td>${orderDetails.orderCurrencyFormat }</td>
-      <td>Processing</td>
-    </tr>
-    </c:forEach>
-  </tbody>
-</table>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Order #</th>
+					<th scope="col">Product</th>
+					<th scope="col">Price</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Product Total</th>
+					<th scope="col">Order Status</th>
+					<th scope="col">Order Total</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<%-- <c:forEach items="${orderDetails }" var="orderDetails">
+					<tr>
+						<td>${orderDetails.orderId }</td>
+						<td>${orderDetails.productName }</td>
+						<td>${orderDetails.price }</td>
+						<td>${orderDetails.quantity }</td>
+						<td>${orderDetails.productCurrencyFormat }</td>
+						<td>${orderDetails.orderCurrencyFormat }</td>
+						<td>Processing</td>
+					</tr>
+				</c:forEach>
+ --%>
+				<c:forEach var="entry" items="${ordersHash}">
+					<c:forEach var="orderDetails" items="${entry.value}"
+						varStatus="loop">
+						<tr>
+							<c:if test="${loop.index == 0}">
+								<td rowspan="${entry.value.size()}" style="border-right:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${orderDetails.orderId}</td>
+							</c:if>
+							<td>${orderDetails.productName}</td>
+							<td>${orderDetails.price}</td>
+							<td>${orderDetails.quantity}</td>
+							<td>${orderDetails.productCurrencyFormat}</td>
+							<td>Processing</td>
+							<c:if test="${loop.index == 0}">
+								<td rowspan="${entry.value.size()}" style="border-left:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${orderDetails.orderCurrencyFormat}</td>
+							</c:if>
+
+						</tr>
+					</c:forEach>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 
 	<c:import url="/sharedViews/footer.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />

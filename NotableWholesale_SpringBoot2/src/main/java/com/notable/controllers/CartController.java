@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,12 +14,20 @@ import com.notable.business.Cart;
 import com.notable.business.LineItem;
 import com.notable.business.Product;
 import com.notable.business.User;
+import com.notable.data.ProductJDBCTemplate;
 
 @Controller
 public class CartController {
+	@Autowired
+	private ProductJDBCTemplate jdbc;
 
 	@GetMapping("cart")
 	public String showCart(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+		String value = (String) session.getAttribute("failedOrder");
+		if(value != null && value.equals("seen")) {
+			session.setAttribute("failedOrder", null);
+		}
 		return "/views/cart";
 	}
 
@@ -29,22 +39,32 @@ public class CartController {
 		Cart cart = (Cart) session.getAttribute("cart");
 		Product prod = (Product) session.getAttribute("product");
 		String quant = request.getParameter("qty-1");
-		LineItem li = new LineItem();
-		li.setProduct(prod);
-		li.setQuantity(Integer.parseInt(quant));
-		System.out.println(li.getTotal());
-		if (cart == null /* && user != null */) {
-			// Create line item
-			// add to cart
-			cart = new Cart();
+		int qty = Integer.parseInt(quant);
+
+		Product x = (Product) jdbc.getProduct(prod.getProductId());
+		int stock = x.getStock() - qty;
+
+		if (stock > 0) {
+			LineItem li = new LineItem();
+			li.setProduct(prod);
+			li.setQuantity(qty);
+			if (cart == null /* && user != null */) {
+				// Create line item
+				// add to cart
+				cart = new Cart();
+			}
+			prod.setStock(stock);
+			jdbc.updateCartItem(prod.getProductId(), prod.getName(), prod.getPrice(), stock);
+			cart.addItem(li);
+			cart.setTotal();
+			session.setAttribute("failedOrder", null);
+		} else {
+			session.setAttribute("failedOrder", "seen");
+			System.out.println("There's not enough item to purchase");
 		}
-		System.out.println(cart == null);
-		cart.addItem(li);
-		
-		cart.setTotal();
-		
+
 		session.setAttribute("cart", cart);
-		return showCart(request, response);
+		return "/views/cart";
 	}
 
 	@PostMapping("removeItem")
@@ -52,56 +72,86 @@ public class CartController {
 		HttpSession session = request.getSession();
 		Cart cart = (Cart) session.getAttribute("cart");
 		String name = request.getParameter("name");
+		int qty = Integer.parseInt(request.getParameter("quantity"));
+		int id = Integer.parseInt(request.getParameter("id"));
 
 		// assuming unique product names
 		Product product = new Product();
 		product.setName(name);
 
+		// Initialize returning stock to inventory
+		Product p = jdbc.getProduct(id);
+		System.out.println(p.getName());
+		int newQty = p.getStock() + qty;
+
 		// removes product from cart
 		if (product != null && cart != null) {
+			// Set database
+			jdbc.updateCartItem(p.getProductId(), p.getName(), p.getPrice(), newQty);
+			// delete from cart
 			LineItem lineItem = new LineItem();
 			lineItem.setProduct(product);
 			cart.removeItem(lineItem);
 		}
+
+		if (cart.getCount() == 0) {
+			cart = null;
+		} else {
+			cart.setTotal();
+		}
+
 		
-		cart.setTotal();
 		
+
 		// set "new" cart
+		session.setAttribute("failedOrder", null);
 		session.setAttribute("cart", cart);
-		return showCart(request, response);
+		return "/views/cart";
 	}
 
 	@PostMapping("updateItem")
 	public String updateCart(HttpServletRequest request, HttpServletResponse response) {
 		String name = request.getParameter("name");
 		String price = request.getParameter("price");
+		int productId = Integer.parseInt(request.getParameter("id"));
 		String quantity = request.getParameter(name);
 		int qty = Integer.parseInt(quantity);
 		Double myPrice = Double.parseDouble(price);
 		HttpSession session = request.getSession();
 		Cart cart = (Cart) session.getAttribute("cart");
-
-		// instantiate new dummy holders
-		Product myProduct = new Product();
-		LineItem li = new LineItem();
-		li.setQuantity(qty);
-		li.setProduct(myProduct);
-
-		myProduct.setName(name);
-		myProduct.setPrice(myPrice);
-		// iterate through cart to remove old lineitem and add new one
-		for (LineItem l : cart.getItems()) {
-			// found case
-			if (l.getProduct().getName().contentEquals(name)) {
-				cart.removeItem(l);
-				cart.addItem(li);
-				break;
+		
+		
+		System.out.println(productId);
+		Product old = (Product) jdbc.getProduct(productId);
+		int stock = old.getStock() - qty;
+		if (stock > 0) {
+			jdbc.updateCartItem(productId, name, myPrice, stock);
+			// maybe have that in the checkout logic
+			// instantiate new dummy holders
+			Product myProduct = old;
+			myProduct.setStock(stock);
+			LineItem li = new LineItem();
+			li.setQuantity(qty);
+			li.setProduct(myProduct);
+			// iterate through cart to remove old lineitem and add new one
+			for (LineItem l : cart.getItems()) {
+				// found case
+				if (l.getProduct().getName().contentEquals(name)) {
+					cart.removeItem(l);
+					cart.addItem(li);
+					break;
+				}
 			}
+			session.setAttribute("failedOrder", null);
+		} else {
+			session.setAttribute("failedOrder", "seen");
+			System.out.println("There's not enough item here to add");
 		}
+
 		
 		cart.setTotal();
 		
 		session.setAttribute("cart", cart);
-		return showCart(request, response);
+		return "/views/cart";
 	}
 }

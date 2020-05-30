@@ -40,12 +40,6 @@ public class LoginController {
 		String lastNameResult = users.get(0).getLastName();
 		String streetResult = users.get(0).getStreet();
 		
-
-		System.out.println(emailResult);
-		System.out.println(passwordResult);
-		System.out.println(firstNameResult);
-		System.out.println(lastNameResult);
-		
 		
 
 		// verifying username and password, and if authenticated will create firstname cookie and login Cookie
@@ -77,15 +71,14 @@ public class LoginController {
 				response.addCookie(loggedInCookie);
 			}
 
-//			Cookie[] cookies2 = request.getCookies();
-//			for (Cookie cookieee : cookies2) {
-//				System.out.println("c name: " + cookieee.getName());
-//				System.out.println("c value: " + cookieee.getValue());
-//			}	
 
 		} else {
-			// System.out.println("Wrong email and/or password!");
+		
 			return "views/loginInvalid";
+		}
+		
+		if (emailResult.equals("admin@notable.com")) {
+			return "adminIndex";
 		}
 
 		return "index";
