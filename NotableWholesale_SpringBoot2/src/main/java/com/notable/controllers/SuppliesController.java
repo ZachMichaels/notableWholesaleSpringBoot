@@ -57,10 +57,10 @@ public class SuppliesController {
 		
 		System.out.println("Count: " + cart.getCount());
 		
-		return "views/adminCart";
+		return "views/admin";
 	}
 	
-	//@PutMapping(produces = {"application/json"})
+
 	@GetMapping("adminSubmitOrder")
 	public ModelAndView submitOrder(HttpServletRequest request, ModelAndView mv) {
 		HttpSession session = request.getSession();
@@ -103,10 +103,16 @@ public class SuppliesController {
 		String temp = response.getBody();
 		System.out.println(temp);
 		
-		mv.setViewName("views/home");
+		mv.setViewName("views/adminOrderPlaced");
 		mv.addObject("cart", cart);
 		
 		return mv;
+	}
+	
+	
+	@GetMapping("adminCart")
+	public String hrefGo () {
+		return "views/adminCart";
 	}
 	
 	

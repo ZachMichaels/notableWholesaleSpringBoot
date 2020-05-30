@@ -31,18 +31,7 @@ public class CartRestController {
 		
 		System.out.println("Inside CartRestController in the Stizzore");
 		System.out.println("CART: " + cart.getItems().toString());
-		
-		
-		//Cart cart2 = new Cart();
-//		LineItem li = new LineItem();
-//		Product p = new Product();
-//		li.setLineItemId(1);
-//		li.setProduct(p);
-//		li.setQuantity(25);
-//		
-//		cart2.addItem(li);
-//		
-//		return cart2;
+	
 		
 		return cart;
 	}
