@@ -26,11 +26,11 @@
            				</c:when>
            				<c:when test="${cookie.firstNameCookie.value == 'Admin'}">
            					<a class="headerButton btn" href="home?name=account" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-user-circle"></i> My Account</a>
+                            <i class="fa fa-user-circle"></i>Admin Menu</a>
 	                        <div class="dropdown-menu"
-	                            aria-labelledby="navbarDropdownMenuLink">	             
-	                            <a class="dropdown-item" href="adminOrders"><i class="fa fa-list-ul"></i> Order History</a> 
-	                            <a class="dropdown-item" href="home?name=admin"><i class="fa fa-list-ul"></i> New Order</a> 
+	                            aria-labelledby="navbarDropdownMenuLink">	
+	                            <a class="dropdown-item" href="home?name=admin"><i class="fa fa-list-ul"></i>New Order</a>             
+	                            <a class="dropdown-item" href="adminOrders"><i class="fa fa-list-ul"></i>View History</a> 	                          
 	                            <a class="dropdown-item" href="logout"><i class="fa fa-power-off"></i> Log Out</a>
 	                        </div>
            				</c:when>

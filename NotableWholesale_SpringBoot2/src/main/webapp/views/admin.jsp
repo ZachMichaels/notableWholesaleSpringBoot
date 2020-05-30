@@ -16,11 +16,11 @@
 	<div class="container home">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Administrator Page</h1>
-				<a href="resupply"><button class="headerButton btn">Order
-						Products</button></a>
-				<button class="headerButton btn">View Analytics</button>
-				<button class="headerButton btn">Submit IT Ticket</button>
+				<a href="resupply"><button class="headerButton btn">New Order</button></a>
+				<a href="adminOrders"><button class="headerButton btn">View History</button></a>
+				<a href="logout"><button class="headerButton btn">Log Out</button></a>
+				<h1>New Order</h1>
+				
 			</div>
 		</div>
 	</div>
@@ -48,11 +48,6 @@
 							<td>${product.name }</td>
 							<td>${product.category }</td>
 							<td>${product.stock }</td>
-
-<!-- 							<td> -->
-<%-- 								<input type="hidden" name="${product.productId }" value="0"> --%>
-<!-- 								<input type="number" name="quantity" value="0"> -->
-<!-- 							</td> -->
 							<td>
 								<form class="add-to-cart" action="addSupplies" method="POST">
 								<input type="hidden" name="id" value="${product.productId }">

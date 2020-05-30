@@ -13,6 +13,18 @@
 <body>
 
   <c:import url="/sharedViews/header.jsp" />
+  
+  <div class="container home">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="resupply"><button class="headerButton btn">New Order</button></a>
+				<a href="adminCart"><button class="headerButton btn">Cart</button></a>
+				<a href="adminOrders"><button class="headerButton btn">View History</button></a>
+				<a href="logout"><button class="headerButton btn">Log Out</button></a>
+			</div>
+		</div>
+	</div>
+	
   <c:if test="${cookie.loggedInCookie.value == 'yes'}">
 	<div class="container home">
 		<div class="card">
@@ -63,7 +75,7 @@
 					</table>
 					<p align="center">
 						<a href="adminSubmitOrder"><input type="submit"
-							class="headerButton btn" name="checkout" value="Checkout"></a>
+							class="headerButton btn" name="checkout" value="Place Order"></a>
 					</p>
 				</c:otherwise>
 			</c:choose>

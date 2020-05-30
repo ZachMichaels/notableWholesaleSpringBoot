@@ -78,7 +78,7 @@ public class LoginController {
 		}
 		
 		if (emailResult.equals("admin@notable.com")) {
-			return "views/admin";
+			return "adminIndex";
 		}
 
 		return "index";

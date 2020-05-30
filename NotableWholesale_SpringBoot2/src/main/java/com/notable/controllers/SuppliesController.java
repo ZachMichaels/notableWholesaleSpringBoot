@@ -103,10 +103,16 @@ public class SuppliesController {
 		String temp = response.getBody();
 		System.out.println(temp);
 		
-		mv.setViewName("views/home");
+		mv.setViewName("views/admin");
 		mv.addObject("cart", cart);
 		
 		return mv;
+	}
+	
+	
+	@GetMapping("adminCart")
+	public String hrefGo () {
+		return "views/adminCart";
 	}
 	
 	
