@@ -21,11 +21,16 @@
 				<a href="adminCart"><button class="headerButton btn">Cart</button></a>
 				<a href="adminOrders"><button class="headerButton btn">View History</button></a>
 				<a href="logout"><button class="headerButton btn">Log Out</button></a>
-				<h1>Order History</h1>
+				
 			</div>
 		</div>
 	</div>
 
+<c:if test="${adminOrder.isEmpty() }">
+<p class="center">There are no orders</p>
+</c:if>
+
+<c:if test="${!adminOrder.isEmpty() }">
 	<div class="container home">
 
 		<table class="table">
@@ -33,8 +38,10 @@
 				<tr>
 					<th scope="col">Order #</th>
 					<th scope="col">Product ID</th>
+					<th scope="col">Name</th>
 					<th scope="col">Quantity</th>
 					<th scope="col">Status</th>
+					<th scope="col">Expected Fulfillment Date</th>
 
 				</tr>
 			</thead>
@@ -44,33 +51,27 @@
 					<tr>
 						<td>${adminOrder.orderId }</td>
 						<td>${adminOrder.productId }</td>
+						<td>${adminOrder.name }</td>
 						<td>${adminOrder.quantity }</td>
-						<td>${adminOrder.status }</td>	
+						
+						<c:choose>
+							<c:when test="${adminOrder.status == 'Processing'}">
+								<td>${adminOrder.status }</td>
+								<td>5/31/20</td>
+							</c:when>
+							<c:when test="${adminOrder.status == 'Complete'}">
+								<td>${adminOrder.status } - 5/31/20</td>
+								<td>-</td>
+							</c:when>
+						</c:choose>
+							
 					</tr>
 				</c:forEach>
  
-<%-- 				<c:forEach var="entry" items="${ordersHash}"> --%>
-<%-- 					<c:forEach var="orderDetails" items="${entry.value}" --%>
-<%-- 						varStatus="loop"> --%>
-<!-- 						<tr> -->
-<%-- 							<c:if test="${loop.index == 0}"> --%>
-<%-- 								<td rowspan="${entry.value.size()}" style="border-right:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${orderDetails.orderId}</td> --%>
-<%-- 							</c:if> --%>
-<%-- 							<td>${orderDetails.productName}</td> --%>
-<%-- 							<td>${orderDetails.price}</td> --%>
-<%-- 							<td>${orderDetails.quantity}</td> --%>
-<%-- 							<td>${orderDetails.productCurrencyFormat}</td> --%>
-<!-- 							<td>Processing</td> -->
-<%-- 							<c:if test="${loop.index == 0}"> --%>
-<%-- 								<td rowspan="${entry.value.size()}" style="border-left:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${orderDetails.orderCurrencyFormat}</td> --%>
-<%-- 							</c:if> --%>
-
-<!-- 						</tr> -->
-<%-- 					</c:forEach> --%>
-<%-- 				</c:forEach> --%>
 			</tbody>
 		</table>
 	</div>
+</c:if>
 
 	<c:import url="/sharedViews/adminFooter.jsp" />
 	<c:import url="/sharedViews/scripts.jsp" />
