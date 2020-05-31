@@ -19,7 +19,7 @@ import com.notable.business.Cart;
 public class AdminController {
 
 	// show admins orders
-	@GetMapping("adminOrders") 
+	@GetMapping("adminOrders")
 	public String getOrders(HttpServletRequest request) {
 		
 		RestTemplate rt = new RestTemplate();	
