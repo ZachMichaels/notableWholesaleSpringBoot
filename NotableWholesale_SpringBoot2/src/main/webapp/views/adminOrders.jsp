@@ -36,6 +36,7 @@
 					<th scope="col">Name</th>
 					<th scope="col">Quantity</th>
 					<th scope="col">Status</th>
+					<th scope="col">Expected Fulfillment Date</th>
 
 				</tr>
 			</thead>
@@ -47,7 +48,18 @@
 						<td>${adminOrder.productId }</td>
 						<td>${adminOrder.name }</td>
 						<td>${adminOrder.quantity }</td>
-						<td>${adminOrder.status }</td>	
+						
+						<c:choose>
+							<c:when test="${adminOrder.status == 'Processing'}">
+								<td>${adminOrder.status }</td>
+								<td>5/31/20</td>
+							</c:when>
+							<c:when test="${adminOrder.status == 'Complete'}">
+								<td>${adminOrder.status } - 5/31/20</td>
+								<td>-</td>
+							</c:when>
+						</c:choose>
+							
 					</tr>
 				</c:forEach>
  
