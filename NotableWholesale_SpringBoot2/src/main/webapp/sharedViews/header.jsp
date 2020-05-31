@@ -68,8 +68,11 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="category?name=Groceries">All Groceries</a> <a
                             class="dropdown-item" href="product?productId=1">Meat Sticks</a> <a
-                            class="dropdown-item" href="product?productId=2">Crackers</a> <a
-                            class="dropdown-item" href="product?productId=3">Free-range Tofu</a>
+                            class="dropdown-item" href="product?productId=2">Crackers</a> 
+                            <a class="dropdown-item" href="product?productId=3">Free-range Tofu</a>
+                            <a class="dropdown-item" href="product?productId=4">Dino Egg</a>
+                            <a class="dropdown-item" href="product?productId=5">BBQ Wood Chips</a>
+                            <a class="dropdown-item" href="product?productId=6">Chocolate Scorpions</a>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -79,9 +82,12 @@
                     <div class="dropdown-menu"
                         aria-labelledby="navbarDropdownMenuLink2">
                         <a class="dropdown-item" href="category?name=clothing">All Clothing</a> <a
-                            class="dropdown-item" href="product?productId=4">Romphims</a> <a
-                            class="dropdown-item" href="product?productId=5">Onesies</a> <a
-                            class="dropdown-item" href="product?productId=6">Snuggies</a>
+                            class="dropdown-item" href="product?productId=7">Romphims</a> <a
+                            class="dropdown-item" href="product?productId=8">Onesies</a> <a
+                            class="dropdown-item" href="product?productId=9">Snuggies</a>
+                            <a class="dropdown-item" href="product?productId=10">Hat</a>
+                            <a class="dropdown-item" href="product?productId=11">Athletic Shirt</a>
+                            <a class="dropdown-item" href="product?productId=12">Bear Jacket</a>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -90,9 +96,12 @@
                         aria-haspopup="true" aria-expanded="false"> Electronics </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="category?name=electronics">All
-                            Electronics</a> <a class="dropdown-item" href="product?productId=7">Computers</a>
-                        <a class="dropdown-item" href="product?productId=8">HDMI Cables</a> <a
-                            class="dropdown-item" href="product?productId=9">Televisions</a>
+                            Electronics</a> <a class="dropdown-item" href="product?productId=13">Calculator</a>
+                        <a class="dropdown-item" href="product?productId=14">HDMI Cables</a> <a
+                            class="dropdown-item" href="product?productId=15">Televisions</a>
+                            <a class="dropdown-item" href="product?productId=16">Super Charger</a>
+                            <a class="dropdown-item" href="product?productId=17">Robot Dog</a>
+                            <a class="dropdown-item" href="product?productId=18">Clapper</a>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -101,9 +110,12 @@
                         aria-haspopup="true" aria-expanded="false"> Sporting Goods </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="category?name=sporting goods">All
-                            Sporting Goods</a> <a class="dropdown-item" href="product?productId=10">Nunchucks</a>
-                        <a class="dropdown-item" href="product?productId=11">Javelins</a> <a
-                            class="dropdown-item" href="product?productId=12">Rocket Skates</a>
+                            Sporting Goods</a> <a class="dropdown-item" href="product?productId=19">Nunchucks</a>
+                        <a class="dropdown-item" href="product?productId=20">Javelins</a> <a
+                            class="dropdown-item" href="product?productId=21">Rocket Skates</a>
+                            <a class="dropdown-item" href="product?productId=22">Golf Balls</a>
+                            <a class="dropdown-item" href="product?productId=23">Velcro Trampoline</a>
+                            <a class="dropdown-item" href="product?productId=24">Pogo Stick</a>
                     </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -112,9 +124,12 @@
                         aria-haspopup="true" aria-expanded="false"> Office Supplies </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="category?name=office supplies">All
-                            Office Supplies</a> <a class="dropdown-item" href="product?productId=13">Staplers</a>
-                        <a class="dropdown-item" href="product?productId=14">Paper Shredders</a>
-                        <a class="dropdown-item" href="product?productId=15">3D Printers</a>
+                            Office Supplies</a> <a class="dropdown-item" href="product?productId=25">Staplers</a>
+                        <a class="dropdown-item" href="product?productId=26">Paper Shredders</a>
+                        <a class="dropdown-item" href="product?productId=27">3D Printers</a>
+                        <a class="dropdown-item" href="product?productId=28">Paperclips</a>
+                        <a class="dropdown-item" href="product?productId=29">Desk Pillow</a>
+                        <a class="dropdown-item" href="product?productId=30">Tape Dispenser</a>
                     </div>
                 </nav>
             </div>
