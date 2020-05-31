@@ -33,6 +33,7 @@
 				<tr>
 					<th scope="col">Order #</th>
 					<th scope="col">Product ID</th>
+					<th scope="col">Name</th>
 					<th scope="col">Quantity</th>
 					<th scope="col">Status</th>
 
@@ -44,6 +45,7 @@
 					<tr>
 						<td>${adminOrder.orderId }</td>
 						<td>${adminOrder.productId }</td>
+						<td>${adminOrder.name }</td>
 						<td>${adminOrder.quantity }</td>
 						<td>${adminOrder.status }</td>	
 					</tr>
