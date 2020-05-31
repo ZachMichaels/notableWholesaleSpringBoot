@@ -49,7 +49,7 @@ public class SuppliesController {
 		if (cart == null /* && user != null */) {
 			// Create line item
 			// add to cart
-			cart = new Cart();
+			cart = new Cart(); 
 		}
 		
 		cart.addItem(li);
