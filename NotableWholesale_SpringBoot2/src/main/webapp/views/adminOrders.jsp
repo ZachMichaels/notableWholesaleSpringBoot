@@ -47,7 +47,7 @@
 			</thead>
 			<tbody>
 
-				<c:forEach items="${adminOrder }" var="adminOrder">
+<%-- 				<c:forEach items="${adminOrder }" var="adminOrder">
 					<tr>
 						<td>${adminOrder.orderId }</td>
 						<td>${adminOrder.productId }</td>
@@ -66,6 +66,40 @@
 						</c:choose>
 							
 					</tr>
+				</c:forEach> --%>
+ 
+ 				<c:forEach var="entry" items="${adminOrdersHash}">
+					<c:forEach var="adminOrder" items="${entry.value}"
+						varStatus="loop">
+						<tr>
+							<c:if test="${loop.index == 0}">
+								<td rowspan="${entry.value.size()}" style="border-right:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${adminOrder.orderId}</td>
+							</c:if>
+							
+							<td>${adminOrder.productId}</td>
+							<td>${adminOrder.name}</td>
+							<td>${adminOrder.quantity}</td>
+														
+													<c:choose>
+							<c:when test="${adminOrder.status == 'Processing'}">
+								<c:if test="${loop.index == 0}">
+								<td rowspan="${entry.value.size()}" style="border-left:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${adminOrder.status}</td>
+							</c:if>
+							<c:if test="${loop.index == 0}">
+								<td rowspan="${entry.value.size()}" style="border-left:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">6/7/2020</td>
+							</c:if>
+							</c:when>
+							<c:when test="${adminOrder.status == 'Complete'}">
+								<c:if test="${loop.index == 0}">
+								<td rowspan="${entry.value.size()}" colspan="${entry.value.size()}"  style="border-left:1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${adminOrder.status}</td>
+							</c:if>
+							
+							</c:when>
+						</c:choose>
+
+
+						</tr>
+					</c:forEach>
 				</c:forEach>
  
 			</tbody>
