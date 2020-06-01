@@ -1,5 +1,7 @@
 package com.notable.controllers;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.notable.business.AdminOrder;
 import com.notable.business.Cart;
+import com.notable.business.OrderDetails;
 
 @Controller
 public class AdminController {
@@ -36,6 +39,36 @@ public class AdminController {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("adminOrder", orders); 
+		
+		HashMap<Integer, List<AdminOrder>> hmap = new HashMap<Integer, List<AdminOrder>>();
+		List<AdminOrder> itemsPerOrder = new ArrayList<AdminOrder>();
+		int tempOrderId = 0;
+
+		for (AdminOrder od : orders) {
+			int orderId = od.getOrderId();
+			if (orderId != tempOrderId) {
+				if (tempOrderId != 0) {
+					List<AdminOrder> itemsPerOrderTemp = new ArrayList<AdminOrder>();
+					for (AdminOrder item : itemsPerOrder) {
+						itemsPerOrderTemp.add(item);
+					}
+					hmap.put(tempOrderId, itemsPerOrderTemp);
+				}
+				tempOrderId = orderId;
+				itemsPerOrder.clear();
+			}
+
+			itemsPerOrder.add(od);
+		}
+
+		List<AdminOrder> itemsPerOrderTemp = new ArrayList<AdminOrder>();
+		for (AdminOrder item : itemsPerOrder) {
+			itemsPerOrderTemp.add(item);
+			hmap.put(tempOrderId, itemsPerOrderTemp);
+		}
+
+		System.out.println(hmap.toString());
+		session.setAttribute("adminOrdersHash", hmap);
 
 		
 //		for (AdminOrder order : orders) {
