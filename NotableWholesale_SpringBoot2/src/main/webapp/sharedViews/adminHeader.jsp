@@ -4,7 +4,7 @@
         <div id="homeHeader">
             <div class="row" id="topRow">
                 <div class="col-sm-4">
-                    <a href="home?name=home"><img src="images/notableWholesaleLogo.png"
+                    <a href="home?name=adminHome"><img src="images/notableWholesaleLogo.png"
                         id="mainLogo" alt=""></a>
                 </div>
                 <div class="col-sm-4" id="searchForm">

@@ -57,10 +57,10 @@
 						<c:choose>
 							<c:when test="${adminOrder.status == 'Processing'}">
 								<td>${adminOrder.status }</td>
-								<td>5/31/20</td>
+								<td>6/02/20</td>
 							</c:when>
 							<c:when test="${adminOrder.status == 'Complete'}">
-								<td>${adminOrder.status } - 5/31/20</td>
+								<td>${adminOrder.status } - 6/01/20</td>
 								<td>-</td>
 							</c:when>
 						</c:choose>
