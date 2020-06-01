@@ -53,40 +53,40 @@ $(document).ready(function() {
 
   // FILTER METHOD
 
-  $("#filterButton").click(function() {
-    var minPrice = parseFloat($(".lowPrice").val());
-    var maxPrice = parseFloat($(".highPrice").val());
-
-    var priceArray = [];
-    for (var i = 0; i < 3; i++) {
-      var numb = parseFloat($(".prodPrice").eq(i).html());
-      priceArray.push(numb);
-    }
-    for (var i = 0; i < priceArray.length; i++) {
-      if (minPrice > priceArray[i] || maxPrice < priceArray[i]) {
-        $(".prodPrice").eq(i).parent().hide();
-      }
-      if (minPrice < priceArray[i] && maxPrice > priceArray[i]) {
-        $(".prodPrice").eq(i).parent().show();
-      }
-    }
-
-    var priceArray2 = [];
-    for (var i = 0; i < 3; i++) {
-      var numb = parseFloat($(".price").eq(i).html());
-      priceArray2.push(numb);
-    }
-    for (var i = 0; i < priceArray2.length; i++) {
-      if (minPrice > priceArray2[i] || maxPrice < priceArray2[i]) {
-        $(".price").eq(i).parent().hide();
-      }
-      if (minPrice < priceArray2[i] && maxPrice > priceArray2[i]) {
-        $(".price").eq(i).parent().show();
-      }
-    }
-
-
-  });
-
-
-});
+//  $("#filterButton").click(function() {
+//    var minPrice = parseFloat($(".lowPrice").val());
+//    var maxPrice = parseFloat($(".highPrice").val());
+//
+//    var priceArray = [];
+//    for (var i = 0; i < 3; i++) {
+//      var numb = parseFloat($(".prodPrice").eq(i).html());
+//      priceArray.push(numb);
+//    }
+//    for (var i = 0; i < priceArray.length; i++) {
+//      if (minPrice > priceArray[i] || maxPrice < priceArray[i]) {
+//        $(".prodPrice").eq(i).parent().hide();
+//      }
+//      if (minPrice < priceArray[i] && maxPrice > priceArray[i]) {
+//        $(".prodPrice").eq(i).parent().show();
+//      }
+//    }
+//
+//    var priceArray2 = [];
+//    for (var i = 0; i < 3; i++) {
+//      var numb = parseFloat($(".price").eq(i).html());
+//      priceArray2.push(numb);
+//    }
+//    for (var i = 0; i < priceArray2.length; i++) {
+//      if (minPrice > priceArray2[i] || maxPrice < priceArray2[i]) {
+//        $(".price").eq(i).parent().hide();
+//      }
+//      if (minPrice < priceArray2[i] && maxPrice > priceArray2[i]) {
+//        $(".price").eq(i).parent().show();
+//      }
+//    }
+//
+//
+//  });
+//
+//
+//});

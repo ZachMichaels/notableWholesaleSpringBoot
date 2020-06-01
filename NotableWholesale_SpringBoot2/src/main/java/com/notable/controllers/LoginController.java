@@ -1,5 +1,6 @@
 package com.notable.controllers;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.Cookie;
@@ -13,7 +14,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.notable.business.Product;
+import com.notable.business.Resupply;
 import com.notable.business.User;
+import com.notable.data.ProductJDBCTemplate;
 import com.notable.data.UserMapper;
 
 @Controller
@@ -21,6 +25,8 @@ public class LoginController {
 
 	@Autowired
 	JdbcTemplate jdbc;
+	@Autowired 
+	ProductJDBCTemplate ProductJDBC;
 
 	@PostMapping("login")
 	public String loginUser(String email, String password, HttpServletResponse response, HttpServletRequest request) {
@@ -77,6 +83,7 @@ public class LoginController {
 			return "views/loginInvalid";
 		}
 		
+		//login as admin
 		if (emailResult.equals("admin@notable.com")) {
 			return "adminIndex";
 		}
