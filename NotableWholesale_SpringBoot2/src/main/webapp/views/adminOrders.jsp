@@ -6,7 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<fmt:formatDate type="date" value="${tomorrow}" pattern="mm/dd/yyyy"/>
+
 
 
 
@@ -49,6 +49,7 @@
 						<th scope="col">Status</th>
 						<th scope="col">Expected Fulfillment Date</th>
 						<c:set var="tomorrow" value="<%=new Date(new Date().getTime() + 60*60*24*1000)%>"/>
+						<c:set var="today" value="<%=new Date()%>"/>
 					</tr>
 				</thead>
 				<tbody>
@@ -103,10 +104,16 @@
 									<c:when test="${adminOrder.status == 'Complete'}">
 										<c:if test="${loop.index == 0}">
 											<td rowspan="${entry.value.size()}"
-												colspan="${entry.value.size()}"
-												style="border-left: 1px solid #dee2e6; vertical-align: middle; font-weight: bold;">${adminOrder.status}</td>
+<%-- 												colspan="${entry.value.size()}" --%>
+												style="border-left: 1px solid #dee2e6; vertical-align: middle; font-weight: bold;">
+												${adminOrder.status} - <fmt:formatDate type="date" value="${today}" pattern="MM/dd/yyyy"/>
+												</td>
 										</c:if>
-
+											<c:if test="${loop.index == 0}">
+											<td rowspan="${entry.value.size()}"
+												style="border-left: 1px solid #dee2e6; vertical-align: middle; font-weight: bold;"> - </td>
+										</c:if>
+							
 									</c:when>
 								</c:choose>
 
