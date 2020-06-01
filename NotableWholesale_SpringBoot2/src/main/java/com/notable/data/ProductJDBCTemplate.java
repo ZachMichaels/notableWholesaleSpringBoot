@@ -48,7 +48,16 @@ public class ProductJDBCTemplate implements ProductDAO {
 		System.out.println("Deleted Product with name = " + name);
 		return;
 	}
-
+	
+	//overloaded method for updating stock numbers
+	public void update(int productId, int quantity) {
+		String SQL = "update Products set stock = ? where productid = ?";
+		jdbcTemplateObject.update(SQL,quantity,productId);
+		System.out.println("Updated Product with id = " + productId);
+		return;
+	}
+	
+	
 	public void update(int productId, String name, String description, double price) {
 		String SQL = "update Products set name = ?, description = ?, price = ? where productId = ?";
 		jdbcTemplateObject.update(SQL, name, description, price, productId);
