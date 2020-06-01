@@ -32,10 +32,51 @@
 
 				<thead>
 					<tr>
-						<th scope="col">Prod ID</th>
-						<th scope="col">Name</th>
-						<th scope="col">Category</th>
-						<th scope="col">Current Stock</th>
+						<th scope="col">
+							<div class="dropdown">
+					          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					            Sort
+					          </button>
+					          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					            <a class="dropdown-item" id="" href="adminSortAsc?name=productId">Low to High</a>
+					            <a class="dropdown-item" id="" href="adminSortDesc?name=productId">High to Low</a>					      
+					          </div>
+					        </div>							
+						Prod ID</th>
+						
+						<th scope="col">
+							<div class="dropdown">
+					          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					            Sort
+					          </button>
+					          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					            <a class="dropdown-item" id="" href="adminSortAsc?name=name">A to Z</a>
+					            <a class="dropdown-item" id="" href="adminSortDesc?name=name">Z to A</a>					      
+					          </div>
+					        </div>	
+						Name</th>
+						<th scope="col">
+							<div class="dropdown">
+					          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					            Sort
+					          </button>
+					          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					            <a class="dropdown-item" id="" href="adminSortAsc?name=category">A to Z</a>
+					            <a class="dropdown-item" id="" href="adminSortDesc?name=category">Z to A</a>					      
+					          </div>
+					        </div>	
+						Category</th>
+						<th scope="col">
+							<div class="dropdown">
+					          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					            Sort
+					          </button>
+					          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					            <a class="dropdown-item" id="" href="adminSortAsc?name=stock">Low to High</a>
+					            <a class="dropdown-item" id="" href="adminSortDesc?name=stock">High to Low</a>					      
+					          </div>
+					        </div>						
+						Current Stock</th>
 						<th scope="col">Stock to Order</th>
 
 					</tr>

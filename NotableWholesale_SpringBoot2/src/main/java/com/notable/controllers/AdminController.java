@@ -28,10 +28,15 @@ public class AdminController {
 		
 		List<AdminOrder> orders = response.getBody();
 		
+//		if (!orders.isEmpty()) {
+//		HttpSession session = request.getSession();
+//		session.setAttribute("adminOrder", orders); 
+//		
+//		}
+		
 		HttpSession session = request.getSession();
-		session.setAttribute("adminOrder", orders);
-		
-		
+		session.setAttribute("adminOrder", orders); 
+
 		
 //		for (AdminOrder order : orders) {
 //			System.out.println("Quantity YAY!: " + order.getQuantity());
