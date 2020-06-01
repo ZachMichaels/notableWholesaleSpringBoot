@@ -16,7 +16,7 @@
 	<div class="container home">
 		<div class="row">
 			<div class="col-md-12">
-				<h2 style="color:red">Order complete</h2>
+				<h2 style="color:red">Order sent to Supply World for processing</h2>
 				<h3>Admin Menu</h3>
 				<a href="resupply"><button class="headerButton btn">New Order</button></a>
 				<a href="adminCart"><button class="headerButton btn">Cart</button></a>
