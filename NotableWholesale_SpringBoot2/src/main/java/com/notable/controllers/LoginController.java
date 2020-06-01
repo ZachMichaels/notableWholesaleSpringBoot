@@ -21,6 +21,8 @@ public class LoginController {
 
 	@Autowired
 	JdbcTemplate jdbc;
+	
+	
 
 	@PostMapping("login")
 	public String loginUser(String email, String password, HttpServletResponse response, HttpServletRequest request) {
