@@ -154,4 +154,61 @@ public class CartController {
 		session.setAttribute("cart", cart);
 		return "/views/cart";
 	}
+	
+	@PostMapping("removeAdmin")
+	public String removeFromAdminCart(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+		Cart cart = (Cart) session.getAttribute("adminCart");
+		String name = request.getParameter("name");
+
+		// assuming unique product names
+		Product product = new Product();
+		product.setName(name);
+
+		// removes product from cart
+		if (product != null && cart != null) {
+			// delete from cart
+			LineItem lineItem = new LineItem();
+			lineItem.setProduct(product);
+			cart.removeItem(lineItem);
+		}
+
+		if (cart.getCount() == 0) {
+			cart = null;
+		} else {
+			cart.setTotal();
+		}
+		// set "new" cart
+		session.setAttribute("failedOrder", null);
+		session.setAttribute("adminCart", cart);
+		return "/views/adminCart";
+	}
+
+	@PostMapping("updateAdmin")
+	public String updateAdminCart(HttpServletRequest request, HttpServletResponse response) {
+		String name = request.getParameter("name");
+		String quantity = request.getParameter(name);
+		int productId = Integer.parseInt(request.getParameter("id"));
+		int qty = Integer.parseInt(quantity);
+		Product product = jdbc.getProduct(productId);
+		HttpSession session = request.getSession();
+		Cart cart = (Cart) session.getAttribute("adminCart");
+		
+		
+		LineItem li = new LineItem();
+		li.setQuantity(qty);
+		li.setProduct(product);
+		// iterate through cart to remove old lineitem and add new one
+		for (LineItem l : cart.getItems()) {
+			// found case
+			if (l.getProduct().getName().contentEquals(name)) {
+				cart.removeItem(l);
+				cart.addItem(li);
+				break;
+			}
+		}
+		session.setAttribute("failedOrder", null);
+		session.setAttribute("adminCart", cart);
+		return "/views/adminCart";
+	}
 }
