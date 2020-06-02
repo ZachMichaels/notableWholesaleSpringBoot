@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -19,12 +20,25 @@ import com.notable.data.UserMapper;
 public class UserController extends HttpServlet {
 
 	@Autowired
-	UserJDBCTemplate jdbc;
+	UserJDBCTemplate ujdbc;
+	
+	@Autowired
+	JdbcTemplate jdbc;
 
 	@PostMapping("register")
 	public String registerUser(String firstName, String lastName, String street, String city, String state, String zip,
 			String email, String password) {
-		jdbc.create(firstName, lastName, street, city, state, zip, email, password);
+		List<User> users = jdbc.query("SELECT * FROM users WHERE email = '" + email + "'",
+				new UserMapper());
+		
+		if (users.isEmpty()) {
+			ujdbc.create(firstName, lastName, street, city, state, zip, email, password);
+		}
+		else {
+			return "views/registerInvalid";
+		}
+		
+		
 		return "views/login";
 
 	}
@@ -33,10 +47,10 @@ public class UserController extends HttpServlet {
 	public String editProfile(Integer id, String firstName, String lastName, String street, String city, String state,
 			String zip, String email, HttpServletRequest request) {
 		
-		jdbc.update(id, firstName, lastName, street, city, state, zip, email);
+		ujdbc.update(id, firstName, lastName, street, city, state, zip, email);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("users", jdbc.userList(email));
+		session.setAttribute("users", ujdbc.userList(email));
 
 		return "views/account";
 	}
