@@ -30,8 +30,6 @@ public class SearchController {
 	@PostMapping("search")
 	public String searchResults(String searchTerm, HttpServletRequest request, HttpServletResponse response) {
 
-		System.out.println(searchTerm);
-
 		List<Product> products = jdbc.query("SELECT * FROM products where searchTerms LIKE '%" + searchTerm + "%'",
 				new ProductMapper());
 		

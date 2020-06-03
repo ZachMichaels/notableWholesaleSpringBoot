@@ -23,19 +23,13 @@ public class AdminController {
 
 	// show admins orders
 	@GetMapping("adminOrders")
-	public String getOrders(HttpServletRequest request) {
+	public String getOrders(HttpServletRequest request) { 
 		
 		RestTemplate rt = new RestTemplate();	
 		String url = "http://localhost:8090/orders";
 		ResponseEntity<List<AdminOrder>> response = rt.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<AdminOrder>>() {});
 		
 		List<AdminOrder> orders = response.getBody();
-		
-//		if (!orders.isEmpty()) {
-//		HttpSession session = request.getSession();
-//		session.setAttribute("adminOrder", orders); 
-//		
-//		}
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("adminOrder", orders); 
@@ -70,12 +64,6 @@ public class AdminController {
 		System.out.println(hmap.toString());
 		session.setAttribute("adminOrdersHash", hmap);
 
-		
-//		for (AdminOrder order : orders) {
-//			System.out.println("Quantity YAY!: " + order.getQuantity());
-//		}
-		
-		//System.out.println("Quantity: " + order.getQuantity());
 		
 		return "views/adminOrders";
 	}

@@ -40,8 +40,8 @@
 					<li class="list-group-item d-flex justify-content-between bg-light">
 						<div class="text-success">
 							<h6 class="my-0">Promo code</h6>
-							<small>For Calvin only</small>
-						</div> <span class="text-success">-$0</span>
+					
+						</div> <span class="text-success">$0</span>
 					</li>
 					<li class="list-group-item d-flex justify-content-between"><span>Total
 							(USD)</span> <strong>${cart.priceCurrencyFormat }</strong></li>

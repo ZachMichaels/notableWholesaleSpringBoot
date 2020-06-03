@@ -54,27 +54,6 @@
 				</thead>
 				<tbody>
 
-					<%-- 				<c:forEach items="${adminOrder }" var="adminOrder">
-					<tr>
-						<td>${adminOrder.orderId }</td>
-						<td>${adminOrder.productId }</td>
-						<td>${adminOrder.name }</td>
-						<td>${adminOrder.quantity }</td>
-						
-						<c:choose>
-							<c:when test="${adminOrder.status == 'Processing'}">
-								<td>${adminOrder.status }</td>
-								<td>6/02/20</td>
-							</c:when>
-							<c:when test="${adminOrder.status == 'Complete'}">
-								<td>${adminOrder.status } - 6/01/20</td>
-								<td>-</td>
-							</c:when>
-						</c:choose>
-							
-					</tr>
-				</c:forEach> --%>
-
 					<c:forEach var="entry" items="${adminOrdersHash}">
 						<c:forEach var="adminOrder" items="${entry.value}"
 							varStatus="loop">
